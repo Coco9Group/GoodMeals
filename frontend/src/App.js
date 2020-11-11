@@ -12,13 +12,13 @@ import Navbar from "./components/navBar/Navbar";
 import AboutUs from "./pages/AboutUs";
 import Faq from "./pages/Faq";
 import Review from "./pages/Review";
-import Meal from "./components/Meal";
 import Keto from "./pages/Keto";
 import Footer from "./components/footer/footer.js";
 import Diets from "./pages/Diets";
 import Paleo from "./pages/Paleo";
 import Vegan from "./pages/Vegan";
 import Vegetarian from "./pages/Vegetarian";
+import Meals from "./pages/Meals";
 
 function App() {
   return (
@@ -34,6 +34,7 @@ function App() {
         <Route path="/vegan" exact component={Vegan} />
         <Route path="/paleo" exact component={Paleo} />
         <Route path="/vegetarian" exact component={Vegetarian} />
+        <Route path="/meals" exact component={Meals} />
         <Route path="/meal/:id" component={MealPage} />
       </Switch>
       <Footer />
