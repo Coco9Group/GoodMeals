@@ -19,6 +19,13 @@ import Paleo from "./pages/Paleo";
 import Vegan from "./pages/Vegan";
 import Vegetarian from "./pages/Vegetarian";
 import Meals from "./pages/Meals";
+import Login from "./pages/Login";
+import Signup from "./pages/Signup";
+import Order from "./pages/Order";
+import OrderHistory from "./pages/OrderHistory";
+import Cart from "./pages/Cart";
+import Profile from "./pages/Profile";
+
 
 function App() {
   return (
@@ -36,6 +43,12 @@ function App() {
         <Route path="/vegetarian" exact component={Vegetarian} />
         <Route path="/meals" exact component={Meals} />
         <Route path="/meal/:id" component={MealPage} />
+        <Route path="/log-in" exact component={Login} />
+        <Route path="/sign-up" exact component={Signup} />
+        <Route path="/order" exact component={Order} />
+        <Route path="/orderhistory" exact component={OrderHistory} />
+        <Route path="/cart" exact component={Cart} />
+        <Route path="/profile" exact component={Profile} />
       </Switch>
       <Footer />
     </BrowserRouter>
