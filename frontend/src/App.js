@@ -42,7 +42,7 @@ function App() {
         <Route path="/paleo" exact component={Paleo} />
         <Route path="/vegetarian" exact component={Vegetarian} />
         <Route path="/meals" exact component={Meals} />
-        <Route path="/meal/:id" component={MealPage} />
+        <Route path="/meals/:id" component={MealPage} />
         <Route path="/log-in" exact component={Login} />
         <Route path="/sign-up" exact component={Signup} />
         <Route path="/order" exact component={Order} />
