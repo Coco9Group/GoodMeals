@@ -187,6 +187,72 @@ const data = {
       image: "/images/paleo/paleoCarrotCakeCupcakes.jpg",
       rating: 4.5,
     },
+    {
+      _id: "18",
+      name: "Blackened Tempeh Wrap",
+      description:
+        "Blackened Tempeh with Avocado, Kale, Radishes, Pickled Onions and a Creamy VEGAN Cajun Ranch Dressing that can be made into entrée salad, packable wrap or healthy satisfying Buddha bowl!",
+      price: 12,
+      ingredients: "bean",
+      dietplanName: "vegan",
+      image: "/images/vegan/veganBlackenedTempehWrap.jpg",
+      rating: 4.5,
+    },
+    {
+      _id: "19",
+      name: "Baked Sheet-Pan Ratatouille",
+      description:
+        "Make a big batch on Sunday then serve it up 3 different ways during the busy workweek. Simple, EASY, healthy, delicious…  and totally vegan!",
+      price: 12,
+      ingredients: "bean",
+      dietplanName: "vegan",
+      image: "/images/vegan/veganRatatouille.jpg",
+      rating: 4.5,
+    },
+    {
+      _id: "20",
+      name: "Chipotle Portobello Tacos",
+      description:
+        "Made with sheet-pan roasted portobello mushrooms in a delicious chipotle marinade, with vegan Cilantro Cream, avocado, pickled onions, and roasted peppers.",
+      price: 12,
+      ingredients: "bean",
+      dietplanName: "vegan",
+      image: "/images/vegan/veganPortobelloTacos.jpg",
+      rating: 4.5,
+    },
+    {
+      _id: "21",
+      name: "Spicy Miso Portobello Mushroom Burger",
+      description:
+        "This Asian-style, grilled, vegan portobello mushroom burger is full of delicious umami flavor! It’s lathered with Asian-style Guacamole, topped with a cool cucumber ribbon salad and crunchy carrot slaw.",
+      price: 12,
+      ingredients: "bean",
+      dietplanName: "vegan",
+      image: "/images/vegan/veganSpicyMisoBurger.jpg",
+      rating: 4.5,
+    },
+    {
+      _id: "22",
+      name: "Vegan Alfredo",
+      description:
+        "Made with cashews or hemp hearts), tossed with sauteed mushrooms, peas, Meyer lemon zest and a secret ingredient that gives this extra complexity and depth.",
+      price: 12,
+      ingredients: "bean",
+      dietplanName: "vegan",
+      image: "/images/vegan/veganAlfredo.jpg",
+      rating: 4.5,
+    },
+    {
+      _id: "23",
+      name: "Lentil Dal with Sweet Potatoes",
+      description:
+        "Soulful, comforting Sweet Potato & Lentil Dal topped with a flavorful “tempering oil”. A quick 30 minute vegan meal that is simple to make and full of fragrant Indian spices.",
+      price: 12,
+      ingredients: "bean",
+      dietplanName: "vegan",
+      image: "/images/vegan/veganLentilDalSweetPotatoes.jpg",
+      rating: 4.5,
+    },
   ],
 };
 export default data;
