@@ -6,7 +6,7 @@ import MealPage from "./pages/MealPage";
 import Navbar from "./components/navBar/Navbar";
 import AboutUs from "./pages/AboutUs";
 import Faq from "./pages/Faq";
-import Review from "./pages/Review";
+import Review from "./pages/PageReview";
 import Keto from "./pages/Keto";
 import Footer from "./components/footer/footer.js";
 import Diets from "./pages/Diets";
@@ -29,7 +29,7 @@ function App() {
         <Route path="/" exact component={Home} />
         <Route path="/faq" exact component={Faq} />
         <Route path="/about-us" exact component={AboutUs} />
-        <Route path="/review" exact component={Review} />
+        <Route path="/pageReview" exact component={Review} />
         <Route path="/diets" exact component={Diets} />
         <Route path="/keto" exact component={Keto} />
         <Route path="/vegan" exact component={Vegan} />
@@ -41,7 +41,7 @@ function App() {
         <Route path="/sign-up" exact component={Signup} />
         <Route path="/order" exact component={Order} />
         <Route path="/orderhistory" exact component={OrderHistory} />
-        <Route path="/cart" exact component={Cart} />
+        <Route path="/cart/:id?" exact component={Cart} />
         <Route path="/profile" exact component={Profile} />
       </Switch>
       <Footer />

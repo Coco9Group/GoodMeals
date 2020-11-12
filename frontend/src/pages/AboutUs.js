@@ -1,9 +1,6 @@
 import React, { Component } from "react";
 import { Map, GoogleApiWrapper, Marker } from "google-maps-react";
-import "../App.css";
-
-//npm install google-maps-react
-//npm install --save google-maps-react
+import "./AboutUs.css";
 
 const mapS = {
   width: "45%",

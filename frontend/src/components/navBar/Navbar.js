@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useSelector } from 'react-redux';
 import { Button } from "./Button";
 import { Link } from "react-router-dom";
 import "./Navbar.css";
@@ -26,6 +27,9 @@ function Navbar() {
       setDropdown(false);
     }
   };
+
+  const cart = useSelector((state) => state.cart);
+  const { cartItems } = cart;
 
   return (
     <>
@@ -73,13 +77,16 @@ function Navbar() {
             </Link>
           </li>
           <li className="nav-item">
-            <Link to="/review" className="nav-links" onClick={closeMobileMenu}>
+            <Link to="/pageReview" className="nav-links" onClick={closeMobileMenu}>
               Review
             </Link>
           </li>
           <li className="nav-item">
             <Link to="/cart" className="nav-links" onClick={closeMobileMenu}>
               Cart
+              {cartItems.length > 0 && (
+                <span className="badge">{cartItems.length}</span>
+              )}
             </Link>
           </li>
           <li>
