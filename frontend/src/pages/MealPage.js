@@ -30,7 +30,6 @@ export default function MealPage(props) {
         <MessageBox variant="danger">{error}</MessageBox>
       ) : (
             <div>
-              <Link to="/meals">Back to result</Link>
               <div className="row">
                 <div className="col-2">
                   <img className="large" src={meal.image} alt={meal.name}></img>
