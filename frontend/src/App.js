@@ -1,11 +1,6 @@
 import React from "react";
 import "./App.css";
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  BrowserRouter,
-} from "react-router-dom";
+import { Switch, Route, BrowserRouter } from "react-router-dom";
 import Home from "./pages/Home";
 import MealPage from "./pages/MealPage";
 import Navbar from "./components/navBar/Navbar";
@@ -19,6 +14,12 @@ import Paleo from "./pages/Paleo";
 import Vegan from "./pages/Vegan";
 import Vegetarian from "./pages/Vegetarian";
 import Meals from "./pages/Meals";
+import Login from "./pages/Login";
+import Signup from "./pages/Signup";
+import Order from "./pages/Order";
+import OrderHistory from "./pages/OrderHistory";
+import Cart from "./pages/Cart";
+import Profile from "./pages/Profile";
 
 function App() {
   return (
@@ -35,7 +36,13 @@ function App() {
         <Route path="/paleo" exact component={Paleo} />
         <Route path="/vegetarian" exact component={Vegetarian} />
         <Route path="/meals" exact component={Meals} />
-        <Route path="/meal/:id" component={MealPage} />
+        <Route path="/meals/:id" component={MealPage} />
+        <Route path="/log-in" exact component={Login} />
+        <Route path="/sign-up" exact component={Signup} />
+        <Route path="/order" exact component={Order} />
+        <Route path="/orderhistory" exact component={OrderHistory} />
+        <Route path="/cart" exact component={Cart} />
+        <Route path="/profile" exact component={Profile} />
       </Switch>
       <Footer />
     </BrowserRouter>

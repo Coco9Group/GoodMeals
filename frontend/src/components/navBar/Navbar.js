@@ -32,17 +32,17 @@ function Navbar() {
       <nav className="navbar">
         <Link to="/" className="navbar-logo" onClick={closeMobileMenu}>
           GoodMeals
-          <i class="fas fa-utensils" />
+          <i className="fas fa-utensils" />
         </Link>
         <div className="menu-icon" onClick={handleClick}>
           <i className={click ? "fas fa-times" : "fas fa-bars"} />
         </div>
         <ul className={click ? "nav-menu active" : "nav-menu"}>
-          <li className="nav-item">
+          {/* <li className="nav-item">
             <Link to="/" className="nav-links" onClick={closeMobileMenu}>
               Home
             </Link>
-          </li>
+          </li> */}
           <li
             className="nav-item"
             onMouseEnter={onMouseEnter}
@@ -77,13 +77,18 @@ function Navbar() {
               Review
             </Link>
           </li>
+          <li className="nav-item">
+            <Link to="/cart" className="nav-links" onClick={closeMobileMenu}>
+              Cart
+            </Link>
+          </li>
           <li>
             <Link
-              to="/sign-up"
+              to="/log-in"
               className="nav-links-mobile"
               onClick={closeMobileMenu}
             >
-              Sign Up
+              Login
             </Link>
           </li>
         </ul>
