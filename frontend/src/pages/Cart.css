@@ -1,0 +1,25 @@
+.rowcart {
+  align-items: flex-start;
+}
+
+.colcart {
+  flex: 2 1 50rem;
+}
+
+.rowdisplay {
+  display: flex;
+  flex-wrap: wrap;
+  /* justify-content: space-between; */
+  align-items: center;
+}
+
+.min-30 {
+  min-width: 30rem;
+}
+
+.imgcart {
+  margin-left: 7.5%;
+  margin-top: 1.5%;
+  width: 10%;
+  height: auto;
+}

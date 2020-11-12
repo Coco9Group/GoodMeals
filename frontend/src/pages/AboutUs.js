@@ -35,7 +35,7 @@ class AboutUs extends Component {
           <div className="info">
             <h4>Address</h4>
             <p>130 Dundas Street London ON N6A 1G2</p>
-            <h4>Tel: (xxx) xxx-xxxx</h4>
+            <h4>Tel</h4>
             <p>519-452-4430</p>
           </div>
           <div></div>
