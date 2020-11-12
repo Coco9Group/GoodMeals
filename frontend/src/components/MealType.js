@@ -20,16 +20,12 @@ export default function MealType(props) {
 
   return (
     <div>
-      <Card
-        key={meal._id}
-        className={classes.root}
-        style={{ fontSize: "calc(10px + 2vmin)", color: "white" }}
-      >
+      <Card key={meal._id} className={classes.root}>
         <CardActionArea>
           <CardMedia
             component="img"
             alt={meal.image}
-            height="140"
+            height="160"
             image={meal.image}
             title="Contemplative Reptile"
           />
@@ -38,6 +34,7 @@ export default function MealType(props) {
               backgroundColor: "lightgrey",
               color: "black",
               marginTop: "1%",
+              height: "200px",
             }}
           >
             <Typography gutterBottom variant="h5" component="h2">
@@ -52,9 +49,15 @@ export default function MealType(props) {
           style={{ backgroundColor: "grey", color: "white", fontWeight: "900" }}
         >
           <Typography style={{ fontWeight: "900" }}>
-            <Button size="small" color="primary" style={{ fontWeight: "700" }}>
-              Learn More
-            </Button>
+            <a style={{ textDecoration: "none" }} href={`/meals/${meal._id}`}>
+              <Button
+                size="small"
+                color="primary"
+                style={{ fontWeight: "700" }}
+              >
+                Learn More
+              </Button>
+            </a>
           </Typography>
         </CardActions>
       </Card>
