@@ -3,7 +3,6 @@ import "./MealPage.css";
 import { Link } from 'react-router-dom';
 import LoadingBox from '../components/LoadingBox';
 import MessageBox from '../components/MessageBox';
-//import Rating from "../components/Rating";
 import { useDispatch, useSelector } from "react-redux";
 import { detailsMeal } from "../actions/mealActions";
 
