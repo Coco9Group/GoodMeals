@@ -13,7 +13,7 @@ export default function Diets() {
               component="img"
               alt="Keto Diet Sign"
               height="400"
-              image="images/ketoDiet.jpg"
+              image="images/keto/ketoDiet.jpg"
               title="Keto Diet Sign"
             />
           </Link>

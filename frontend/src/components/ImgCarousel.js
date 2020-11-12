@@ -1,4 +1,4 @@
-import React from "react";
+/* import React from "react";
 //import "bootstrap/dist/css/bootstrap.min.css";
 import "./ImgCarousel.css";
 import { Carousel } from "react-bootstrap";
@@ -53,3 +53,4 @@ const ImgCarouselComponent = () => {
 };
 
 export default ImgCarouselComponent;
+ */

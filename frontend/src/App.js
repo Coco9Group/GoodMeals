@@ -1,11 +1,6 @@
 import React from "react";
 import "./App.css";
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  BrowserRouter,
-} from "react-router-dom";
+import { Switch, Route, BrowserRouter } from "react-router-dom";
 import Home from "./pages/Home";
 import MealPage from "./pages/MealPage";
 import Navbar from "./components/navBar/Navbar";
@@ -25,7 +20,6 @@ import Order from "./pages/Order";
 import OrderHistory from "./pages/OrderHistory";
 import Cart from "./pages/Cart";
 import Profile from "./pages/Profile";
-
 
 function App() {
   return (

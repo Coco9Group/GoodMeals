@@ -1,17 +1,17 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState } from "react";
 import "./MealPage.css";
 import { Link } from 'react-router-dom';
 import LoadingBox from '../components/LoadingBox';
 import MessageBox from '../components/MessageBox';
 //import Rating from "../components/Rating";
-import { useDispatch, useSelector } from 'react-redux';
-import { detailsMeal } from '../actions/mealActions';
+import { useDispatch, useSelector } from "react-redux";
+import { detailsMeal } from "../actions/mealActions";
 
 export default function MealPage(props) {
   const dispatch = useDispatch();
   const mealId = props.match.params.id;
   const [qty, setQty] = useState(1);
-  const mealDetails = useSelector(state => state.mealDetails);
+  const mealDetails = useSelector((state) => state.mealDetails);
   const { loading, error, meal } = mealDetails;
 
   useEffect(() => {
@@ -79,5 +79,5 @@ export default function MealPage(props) {
             </div>
           )}
     </div>
-  );
+  )
 }
