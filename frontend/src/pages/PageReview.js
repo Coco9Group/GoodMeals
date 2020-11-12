@@ -1,5 +1,5 @@
 import React,{Component} from 'react';
-import "../App.css";
+import "./PageReview.css";
 import Avatar from '@material-ui/core/Avatar';
 import Card from '@material-ui/core/Card';
 import CardHeader from '@material-ui/core/CardHeader';
