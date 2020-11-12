@@ -47,7 +47,7 @@ function App() {
         <Route path="/sign-up" exact component={Signup} />
         <Route path="/order" exact component={Order} />
         <Route path="/orderhistory" exact component={OrderHistory} />
-        <Route path="/cart" exact component={Cart} />
+        <Route path="/cart/:id?" exact component={Cart} />
         <Route path="/profile" exact component={Profile} />
       </Switch>
       <Footer />
