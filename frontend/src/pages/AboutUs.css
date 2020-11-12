@@ -1,0 +1,16 @@
+.info {
+  float: right;
+  width: 50%;
+  padding-bottom: 27%;
+}
+
+.main {
+  width: 80%;
+  font-weight: normal;
+  margin-left: 10%;
+  display: inline-block;
+  background: #646e81;
+  position: relative;
+  padding-left: 2%;
+  color: white;
+}
