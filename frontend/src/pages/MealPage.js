@@ -31,7 +31,7 @@ export default function MealPage(props) {
       ) : (
             <div>
               <Link to="/meals">Back to result</Link>
-              <div className="row top">
+              <div className="row">
                 <div className="col-2">
                   <img className="large" src={meal.image} alt={meal.name}></img>
                 </div>
@@ -40,9 +40,6 @@ export default function MealPage(props) {
                     <li>
                       <h1>{meal.name}</h1>
                     </li>
-                    {/* <li>
-                      <Rating rating={meal.rating}></Rating>
-                    </li> */}
                     <li>Price: ${meal.price}</li>
                     <li>
                       Description:
@@ -79,5 +76,5 @@ export default function MealPage(props) {
             </div>
           )}
     </div>
-  )
+  );
 }
