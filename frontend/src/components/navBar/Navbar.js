@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { logout } from '../../actions/userActions';
 import { Button } from "./Button";
 import { Link } from "react-router-dom";
 import "./Navbar.css";
@@ -30,6 +31,13 @@ function Navbar() {
 
   const cart = useSelector((state) => state.cart);
   const { cartItems } = cart;
+  const userLogin = useSelector((state) => state.userLogin);
+  const { userInfo } = userLogin;
+
+  const dispatch = useDispatch();
+  const logoutHandler = () => {
+    dispatch(logout());
+  };
 
   return (
     <>
@@ -42,11 +50,6 @@ function Navbar() {
           <i className={click ? "fas fa-times" : "fas fa-bars"} />
         </div>
         <ul className={click ? "nav-menu active" : "nav-menu"}>
-          {/* <li className="nav-item">
-            <Link to="/" className="nav-links" onClick={closeMobileMenu}>
-              Home
-            </Link>
-          </li> */}
           <li
             className="nav-item"
             onMouseEnter={onMouseEnter}
@@ -89,17 +92,23 @@ function Navbar() {
               )}
             </Link>
           </li>
-          <li>
-            <Link
-              to="/login"
-              className="nav-links-mobile"
-              onClick={closeMobileMenu}
-            >
-              Login
-            </Link>
-          </li>
         </ul>
-        <Button />
+        {
+          userInfo ? (
+            <div className="userdropdown">
+              <Link to="#">{userInfo.name} <i className="fa fa-caret-down"></i>{' '} </Link>
+              <ul className="userdropdown-content">
+                <li>
+                  <Link to="#logout" onClick={logoutHandler}>
+                    Log Out
+                    </Link>
+                </li>
+              </ul>
+            </div>
+          ) : (
+              <Button />
+            )
+        }
       </nav>
     </>
   );

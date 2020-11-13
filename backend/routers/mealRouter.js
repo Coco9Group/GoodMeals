@@ -13,6 +13,7 @@ mealRouter.get(
     })
 );
 
+//add meal data from data.js to Mongodb - not use for website functionality
 mealRouter.get('/seed', expressAsyncHandler(async (req, res) => {
     // await User.remove({});
     const createdMeals = await Meal.insertMany(data.meals);

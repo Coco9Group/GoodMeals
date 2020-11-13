@@ -7,7 +7,7 @@ import { generateToken } from '../utils.js';
 
 const userRouter = express.Router();
 
-//add user data from data.js to Mongodb
+//add user data from data.js to Mongodb - not use for website functionality
 userRouter.get('/seed', expressAsyncHandler(async (req, res) => {
     // await User.remove({});
     const createdUsers = await User.insertMany(data.users);
