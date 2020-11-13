@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { addToCart } from '../actions/cartActions';
+import { addToCart, removeFromCart } from '../actions/cartActions';
 import { Link } from 'react-router-dom';
 import MessageBox from '../components/MessageBox';
 import "./Cart.css";
@@ -20,7 +20,11 @@ export default function Cart(props) {
     }, [dispatch, mealId, qty]);
 
     const removeFromCartHandler = (id) => {
-        //dispatch(removeFromCart(id));
+        dispatch(removeFromCart(id)); //imported from cartAction
+    };
+
+    const checkoutHandler = () => {
+        props.history.push('/login?redirect=shipping');
     };
 
     return (
@@ -71,16 +75,31 @@ export default function Cart(props) {
                                         <div>
                                             <button
                                                 type="button"
-                                                onClick={() => removeFromCartHandler(item.product)}
+                                                onClick={() => removeFromCartHandler(item.meal)}
                                             >
                                                 Delete
-                        </button>
+                                            </button>
                                         </div>
                                     </div>
                                 </li>
                             ))}
                         </ul>
                     )}
+            </div>
+            <div>
+                <ul>
+                    <li>
+                        <h2>
+                            Subtotal ({cartItems.reduce((a, c) => a + c.qty, 0)} items) : ${cartItems.reduce((a, c) => a + c.price * c.qty, 0)}
+                        </h2>
+                    </li>
+                    <li>
+                        <button type="button" onClick={checkoutHandler}
+                            disabled={cartItems.length === 0}>
+                            Proceed to Checkout
+                        </button>
+                    </li>
+                </ul>
             </div>
         </div>
     );
