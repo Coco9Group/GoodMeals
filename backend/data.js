@@ -1,26 +1,26 @@
-import bcrypt from 'bcryptjs';
+import bcrypt from "bcryptjs";
 
 const data = {
   users: [
     {
-      name: 'Jane Doe',
-      email: 'jd@abc.com',
-      password: bcrypt.hashSync('1234', 8),
-      address: '111 So st',
-      city: 'London',
-      province: 'on',
-      postalCode: 'Mbo4Ge',
-      phone: '1234567'
+      name: "Jane Doe",
+      email: "jd@abc.com",
+      password: bcrypt.hashSync("1234", 8),
+      address: "111 So st",
+      city: "London",
+      province: "on",
+      postalCode: "Mbo4Ge",
+      phone: "1234567",
     },
     {
-      name: 'Julia Robert',
-      email: 'jr2@abc.com',
-      password: bcrypt.hashSync('1234', 8),
-      address: '567 Sr St',
-      city: 'London',
-      province: 'on',
-      postalCode: 'M5Y5YR',
-      phone: '33335532'
+      name: "Julia Robert",
+      email: "jr2@abc.com",
+      password: bcrypt.hashSync("1234", 8),
+      address: "567 Sr St",
+      city: "London",
+      province: "on",
+      postalCode: "M5Y5YR",
+      phone: "33335532",
     },
   ],
   meals: [
@@ -31,7 +31,7 @@ const data = {
       price: 12,
       ingredients: "chiken",
       dietplanName: "paleo",
-      image: "/images/paleo/paleoFriedChicken.jpg"
+      image: "/images/paleo/paleoFriedChicken.jpg",
     },
     {
       name: "Apple Cinnamon Paleo Fig Newtons",
@@ -40,7 +40,7 @@ const data = {
       price: 12,
       ingredients: "chiken",
       dietplanName: "paleo",
-      image: "/images/paleo/paleoAppleCinnamonFig.jpg"
+      image: "/images/paleo/paleoAppleCinnamonFig.jpg",
     },
     {
       name: "Strawberry Peach Paleo Parfait",
@@ -49,7 +49,7 @@ const data = {
       price: 12,
       ingredients: "chiken",
       dietplanName: "paleo",
-      image: "/images/paleo/paleoStrawPeachParfait.jpg"
+      image: "/images/paleo/paleoStrawPeachParfait.jpg",
     },
     {
       name: "Paleo Almond Butter Cups",
@@ -58,7 +58,7 @@ const data = {
       price: 12,
       ingredients: "chiken",
       dietplanName: "paleo",
-      image: "/images/paleo/paleoAlmondButterCups.jpg"
+      image: "/images/paleo/paleoAlmondButterCups.jpg",
     },
     {
       name: "Paleo Zucchini Fritters",
@@ -67,7 +67,7 @@ const data = {
       price: 12,
       ingredients: "chiken",
       dietplanName: "paleo",
-      image: "/images/paleo/paleoZucchiniFritters.jpg"
+      image: "/images/paleo/paleoZucchiniFritters.jpg",
     },
     {
       name: "Paleo Pumpkin Bread",
@@ -76,7 +76,7 @@ const data = {
       price: 12,
       ingredients: "bean",
       dietplanName: "paleo",
-      image: "/images/paleo/paleoPumpkinBread.jpg"
+      image: "/images/paleo/paleoPumpkinBread.jpg",
     },
     {
       name: "Chicken & Goat Cheese Skillet",
@@ -85,7 +85,7 @@ const data = {
       price: 12,
       ingredients: "bean",
       dietplanName: "keto",
-      image: "/images/keto/ketoChickenGoatCheeseSkillet.jpg"
+      image: "/images/keto/ketoChickenGoatCheeseSkillet.jpg",
     },
     {
       name: "Creamy Garlic Pesto Chicken",
@@ -94,7 +94,7 @@ const data = {
       price: 12,
       ingredients: "bean",
       dietplanName: "keto",
-      image: "/images/keto/ketoGarlicChicken.webp"
+      image: "/images/keto/ketoGarlicChicken.webp",
     },
     {
       name: "Buttery Garlic Herb Chicken With Asparagus",
@@ -103,7 +103,7 @@ const data = {
       price: 12,
       ingredients: "bean",
       dietplanName: "keto",
-      image: "/images/keto/ketoGarlicHerbChicken.webp"
+      image: "/images/keto/ketoGarlicHerbChicken.webp",
     },
     {
       name: "Italian Sausage and Peppers Skillet",
@@ -112,7 +112,7 @@ const data = {
       price: 12,
       ingredients: "bean",
       dietplanName: "keto",
-      image: "/images/keto/ketoItalianSausageAndPeppers.webp"
+      image: "/images/keto/ketoItalianSausageAndPeppers.webp",
     },
     {
       name: "Baked Spaghetti Squash with Lemon Garlic Sauce",
@@ -121,7 +121,7 @@ const data = {
       price: 12,
       ingredients: "bean",
       dietplanName: "keto",
-      image: "/images/keto/ketoBakedSpaghettiSquash.webp"
+      image: "/images/keto/ketoBakedSpaghettiSquash.webp",
     },
     {
       name: "Zucchini Noodles in Creamy Tomato Sauce",
@@ -130,7 +130,7 @@ const data = {
       price: 12,
       ingredients: "bean",
       dietplanName: "keto",
-      image: "/images/keto/ketoZucchiniNoodles.webp"
+      image: "/images/keto/ketoZucchiniNoodles.webp",
     },
     {
       name: "Cheesy Green Beans Casserole",
@@ -139,7 +139,7 @@ const data = {
       price: 12,
       ingredients: "bean",
       dietplanName: "keto",
-      image: "/images/keto/ketoCheesyGreenBeans.webp"
+      image: "/images/keto/ketoCheesyGreenBeans.webp",
     },
     {
       name: "Tomato Spinach Chicken Skillet",
@@ -148,7 +148,7 @@ const data = {
       price: 12,
       ingredients: "bean",
       dietplanName: "keto",
-      image: "/images/keto/ketoTomotaSpinachChicken.webp"
+      image: "/images/keto/ketoTomotaSpinachChicken.webp",
     },
     {
       name: "Jalapeño Popper Chicken Casserole",
@@ -157,7 +157,7 @@ const data = {
       price: 12,
       ingredients: "bean",
       dietplanName: "keto",
-      image: "/images/keto/ketoJalapenoPopperChicken.webp"
+      image: "/images/keto/ketoJalapenoPopperChicken.webp",
     },
     {
       name: "Mozzarella Parmesan Chicken Casserole",
@@ -166,7 +166,7 @@ const data = {
       price: 12,
       ingredients: "bean",
       dietplanName: "keto",
-      image: "/images/keto/ketoMozzarellaParmesanChicken.webp"
+      image: "/images/keto/ketoMozzarellaParmesanChicken.webp",
     },
     {
       name: "Paleo Carrot Cake Cupcakes",
@@ -175,7 +175,7 @@ const data = {
       price: 12,
       ingredients: "bean",
       dietplanName: "paleo",
-      image: "/images/paleo/paleoCarrotCakeCupcakes.jpg"
+      image: "/images/paleo/paleoCarrotCakeCupcakes.jpg",
     },
     {
       name: "Blackened Tempeh Wrap",
@@ -184,7 +184,7 @@ const data = {
       price: 12,
       ingredients: "bean",
       dietplanName: "vegan",
-      image: "/images/vegan/veganBlackenedTempehWrap.jpg"
+      image: "/images/vegan/veganBlackenedTempehWrap.jpg",
     },
     {
       name: "Baked Sheet-Pan Ratatouille",
@@ -193,7 +193,7 @@ const data = {
       price: 12,
       ingredients: "bean",
       dietplanName: "vegan",
-      image: "/images/vegan/veganRatatouille.jpg"
+      image: "/images/vegan/veganRatatouille.jpg",
     },
     {
       name: "Chipotle Portobello Tacos",
@@ -202,7 +202,7 @@ const data = {
       price: 12,
       ingredients: "bean",
       dietplanName: "vegan",
-      image: "/images/vegan/veganPortobelloTacos.jpg"
+      image: "/images/vegan/veganPortobelloTacos.jpg",
     },
     {
       name: "Spicy Miso Portobello Mushroom Burger",
@@ -211,7 +211,7 @@ const data = {
       price: 12,
       ingredients: "bean",
       dietplanName: "vegan",
-      image: "/images/vegan/veganSpicyMisoBurger.jpg"
+      image: "/images/vegan/veganSpicyMisoBurger.jpg",
     },
     {
       name: "Vegan Alfredo",
@@ -220,7 +220,7 @@ const data = {
       price: 12,
       ingredients: "bean",
       dietplanName: "vegan",
-      image: "/images/vegan/veganAlfredo.jpg"
+      image: "/images/vegan/veganAlfredo.jpg",
     },
     {
       name: "Lentil Dal with Sweet Potatoes",
@@ -229,7 +229,61 @@ const data = {
       price: 12,
       ingredients: "bean",
       dietplanName: "vegan",
-      image: "/images/vegan/veganLentilDalSweetPotatoes.jpg"
+      image: "/images/vegan/veganLentilDalSweetPotatoes.jpg",
+    },
+    {
+      name: "Emerald Dal",
+      description:
+        "Emerald Dal is one of the most flavorful, plant-based, vegetarian meals.  This version is packed full of spinach making it especially high in nutrients and flavor! ",
+      price: 12,
+      ingredients: "bean",
+      dietplanName: "vegetarian",
+      image: "/images/vegetarian/vegetarianEmeraldDal.jpg",
+    },
+    {
+      name: "Brocoli Quinoa Cakes",
+      description:
+        "These Broccoli Quinoa Cakes can be made in 30 minutes & are a delicious healthy vegetarian meal that your whole family will love!",
+      price: 12,
+      ingredients: "bean",
+      dietplanName: "vegetarian",
+      image: "/images/vegetarian/vegetarianBrocoliQuinoaCakes.jpg",
+    },
+    {
+      name: "Tomato Risotto with Saffron",
+      description:
+        "This summery risotto is made with juicy vine-ripened tomatoes, and infused with saffron.",
+      price: 12,
+      ingredients: "bean",
+      dietplanName: "vegetarian",
+      image: "/images/vegetarian/vegetarianTomatoRisotto.jpg",
+    },
+    {
+      name: "Tomato Risotto with Saffron",
+      description:
+        "Vegetarian Nasi Goreng (Indonesian Fried Rice) loaded up with fresh veggies! An easy tasty vegetarian recipe that can be made in minutes!",
+      price: 12,
+      ingredients: "bean",
+      dietplanName: "vegetarian",
+      image: "/images/vegetarian/vegetarianNasiGoreng.jpg",
+    },
+    {
+      name: "Roasted Chile Rellenos",
+      description:
+        "A lightened up recipe and simplified by roasting the peppers and the Rancheros sauce ingredients all together on one sheet-pan – saving a step! Delicious and satisfying!",
+      price: 12,
+      ingredients: "bean",
+      dietplanName: "vegetarian",
+      image: "/images/vegetarian/vegetarianRoastedChileRellenos.jpg",
+    },
+    {
+      name: "Vegetarian Enchiladas",
+      description:
+        "Made with black beans and your choice of veggies (like red bell pepper, sweet potato zucchini or corn) and Homemade Enchilada Sauce! Easy, Healthy and full of delicious Mexican Flavor!",
+      price: 12,
+      ingredients: "bean",
+      dietplanName: "vegetarian",
+      image: "/images/vegetarian/vegetarianEnchiladas.jpg",
     },
   ],
 };

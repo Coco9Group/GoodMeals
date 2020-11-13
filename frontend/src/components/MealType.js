@@ -20,7 +20,11 @@ export default function MealType(props) {
 
   return (
     <div>
-      <Card key={meal._id} className={classes.root}>
+      <Card
+        key={meal._id}
+        className={classes.root}
+        style={{ borderBottom: "solid" }}
+      >
         <CardActionArea>
           <CardMedia
             component="img"
