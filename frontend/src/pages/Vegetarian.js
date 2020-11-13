@@ -1,11 +1,12 @@
-import React, { useEffect, useState } from "react";
-import Meal from "../components/Meal";
+import React, { useEffect } from "react";
+import "../App.css";
 import MealType from "../components/MealType";
 import LoadingBox from "../components/LoadingBox";
 import MessageBox from "../components/MessageBox";
 import { useDispatch, useSelector } from "react-redux";
 import { listMeals } from "../actions/mealActions";
 import { Grid } from "@material-ui/core";
+import Divider from "@material-ui/core/Divider";
 
 export default function Vegetarian() {
   const dispatch = useDispatch();
@@ -19,27 +20,57 @@ export default function Vegetarian() {
 
   return (
     <div>
-      <Grid style={{ marginTop: "0.5%" }} lg={10} item container spacing={3}>
-        {loading ? (
-          <LoadingBox></LoadingBox>
-        ) : error ? (
-          <MessageBox variant="danger">{error}</MessageBox>
-        ) : (
-          <div className="row center">
-            {meals
-              .filter((type) => type.dietplanName === "vegetarian")
-              .map((filteredMeals) => (
-                <Grid item lg={4}>
-                  <h1>{filteredMeals.name}</h1>
-                  <MealType
+      <div>
+        <img
+          src={"images/vegetarian/VegetarianBanner.jpg"}
+          alt="VegetarianBanner"
+          style={{
+            marginLeft: "31.5%",
+            marginTop: "1.5%",
+            width: "37%",
+            height: "auto",
+          }}
+        />
+      </div>
+      <Divider
+        variant="middle"
+        style={{
+          marginLeft: "25%",
+          width: "50%",
+          marginTop: "1%",
+          paddingBottom: "0.2%",
+        }}
+      />
+      <div>
+        <Grid
+          style={{ paddingLeft: "3%", margin: "0px" }}
+          lg={12}
+          item
+          container
+          spacing={3}
+        >
+          {loading ? (
+            <LoadingBox></LoadingBox>
+          ) : error ? (
+            <MessageBox variant="danger">{error}</MessageBox>
+          ) : (
+            <div className="row">
+              {meals
+                .filter((type) => type.dietplanName === "vegetarian")
+                .map((filteredMeals) => (
+                  <Grid
+                    style={{ padding: "2%" }}
                     key={filteredMeals._id}
-                    meal={filteredMeals}
-                  ></MealType>
-                </Grid>
-              ))}
-          </div>
-        )}
-      </Grid>
+                    item
+                    lg={3}
+                  >
+                    <MealType meal={filteredMeals}></MealType>
+                  </Grid>
+                ))}
+            </div>
+          )}
+        </Grid>
+      </div>
     </div>
   );
 }
