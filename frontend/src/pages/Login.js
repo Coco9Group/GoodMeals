@@ -61,11 +61,10 @@ export default function Login(props) {
                 <div>
                     <label />
                     <div>
-                        New user? {' '}
-                        {/* <Link to={`/signup?redirect=${redirect}`}>
-                            Join GoodMeals!
-                        </Link> */}
-                        <Link to="signup"> Join GoodMeals!</Link>
+                        New Customer? {' '}
+                        <Link to={`/signup?redirect=${redirect}`}>
+                            Sign up
+                        </Link>
                     </div>
                 </div>
             </form>
