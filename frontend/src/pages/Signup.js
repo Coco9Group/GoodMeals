@@ -79,7 +79,7 @@ export default function Signup(props) {
                 </div>
                 <div><label />
                     <button type="submit">
-                        SignUp
+                        Sign Up
                     </button>
                 </div>
                 <div>

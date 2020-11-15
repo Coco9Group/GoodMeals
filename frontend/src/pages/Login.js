@@ -69,7 +69,7 @@ export default function Login(props) {
         ></span>
         <div style={{ textAlign: "center", marginTop: "3%" }}>
           <div>
-            New user?
+            New Customer?
             <Link
               to={`/signup?redirect=${redirect}`}
               style={{ paddingLeft: "1%" }}
