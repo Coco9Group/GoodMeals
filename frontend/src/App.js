@@ -25,25 +25,28 @@ function App() {
   return (
     <BrowserRouter>
       <Navbar />
-      <Switch>
-        <Route path="/" exact component={Home} />
-        <Route path="/faq" exact component={Faq} />
-        <Route path="/about-us" exact component={AboutUs} />
-        <Route path="/pageReview" exact component={Review} />
-        <Route path="/diets" exact component={Diets} />
-        <Route path="/keto" exact component={Keto} />
-        <Route path="/vegan" exact component={Vegan} />
-        <Route path="/paleo" exact component={Paleo} />
-        <Route path="/vegetarian" exact component={Vegetarian} />
-        <Route path="/meals" exact component={Meals} />
-        <Route path="/meals/:id" component={MealPage} />
-        <Route path="/login" exact component={Login} />
-        <Route path="/signup" exact component={Signup} />
-        <Route path="/order" exact component={Order} />
-        <Route path="/orderhistory" exact component={OrderHistory} />
-        <Route path="/cart/:id?" exact component={Cart} />
-        <Route path="/profile" exact component={Profile} />
-      </Switch>
+
+      <div style={{ paddingTop: "4%" }}>
+        <Switch>
+          <Route path="/" exact component={Home} />
+          <Route path="/faq" exact component={Faq} />
+          <Route path="/about-us" exact component={AboutUs} />
+          <Route path="/pageReview" exact component={Review} />
+          <Route path="/diets" exact component={Diets} />
+          <Route path="/keto" exact component={Keto} />
+          <Route path="/vegan" exact component={Vegan} />
+          <Route path="/paleo" exact component={Paleo} />
+          <Route path="/vegetarian" exact component={Vegetarian} />
+          <Route path="/meals" exact component={Meals} />
+          <Route path="/meals/:id" component={MealPage} />
+          <Route path="/login" exact component={Login} />
+          <Route path="/signup" exact component={Signup} />
+          <Route path="/order" exact component={Order} />
+          <Route path="/orderhistory" exact component={OrderHistory} />
+          <Route path="/cart/:id?" exact component={Cart} />
+          <Route path="/profile" exact component={Profile} />
+        </Switch>
+      </div>
       <Footer />
     </BrowserRouter>
   );

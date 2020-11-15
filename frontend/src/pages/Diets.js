@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 export default function Diets() {
   return (
     <div>
-      <Grid container justify="center" style={{ backgroundColor: "aliceblue" }}>
+      <Grid container justify="center">
         <Grid item xs={6} style={{ padding: "2%" }}>
           <Link to="/keto">
             <CardMedia
