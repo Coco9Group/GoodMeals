@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import { useDispatch, useSelector } from 'react-redux';
-import { logout } from '../../actions/userActions';
+import { useDispatch, useSelector } from "react-redux";
+import { logout } from "../../actions/userActions";
 import { Button } from "./Button";
 import { Link } from "react-router-dom";
 import "./Navbar.css";
@@ -40,8 +40,16 @@ function Navbar() {
   };
 
   return (
-    <>
-      <nav className="navbar">
+    <div style={{ overflow: "hidden" }}>
+      <nav
+        className="navbar"
+        style={{
+          position: "fixed",
+          top: "0",
+          width: "100%",
+          zIndex: "100",
+        }}
+      >
         <Link to="/" className="navbar-logo" onClick={closeMobileMenu}>
           GoodMeals
           <i className="fas fa-utensils" />
@@ -80,7 +88,11 @@ function Navbar() {
             </Link>
           </li>
           <li className="nav-item">
-            <Link to="/pageReview" className="nav-links" onClick={closeMobileMenu}>
+            <Link
+              to="/pageReview"
+              className="nav-links"
+              onClick={closeMobileMenu}
+            >
               Review
             </Link>
           </li>
@@ -93,24 +105,24 @@ function Navbar() {
             </Link>
           </li>
         </ul>
-        {
-          userInfo ? (
-            <div className="userdropdown">
-              <Link to="#">{userInfo.name} <i className="fa fa-caret-down"></i>{' '} </Link>
-              <ul className="userdropdown-content">
-                <li>
-                  <Link to="#logout" onClick={logoutHandler}>
-                    Log Out
-                    </Link>
-                </li>
-              </ul>
-            </div>
-          ) : (
-              <Button />
-            )
-        }
+        {userInfo ? (
+          <div className="userdropdown">
+            <Link to="#">
+              {userInfo.name} <i className="fa fa-caret-down"></i>{" "}
+            </Link>
+            <ul className="userdropdown-content">
+              <li>
+                <Link to="#logout" onClick={logoutHandler}>
+                  Log Out
+                </Link>
+              </li>
+            </ul>
+          </div>
+        ) : (
+          <Button className="nav-button" />
+        )}
       </nav>
-    </>
+    </div>
   );
 }
 
