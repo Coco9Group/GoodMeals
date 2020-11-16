@@ -81,7 +81,7 @@
   position: absolute;
   display: none;
   right: 0;
-  min-width: 8rem;
+  min-width: 10rem;
   padding: 1rem;
   z-index: 1;
   background-color: #1888ff;
