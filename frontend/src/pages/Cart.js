@@ -24,113 +24,116 @@ export default function Cart(props) {
         dispatch(removeFromCart(id)); //imported from cartAction
     };
 
-    const removeFromCartAll = (cartItems) =>
-    {
-       for(var i =0; i < cartItems.length; ++i)
-       {
-            dispatch(removeFromCart(cartItems[i].meal)); 
-       }      
+    const removeFromCartAll = (cartItems) => {
+        for (var i = 0; i < cartItems.length; ++i) {
+            dispatch(removeFromCart(cartItems[i].meal));
+        }
     }
-    
+
     const addHandler = () => {
-        props.history.push('/meals?redirect=shipping');
+        props.history.push('/meals');
     };
 
     return (
         <div
-        style={{
-            backgroundImage: "url(/images/cartimg.jpg)",
-            backgroundPosition: "center",
-            backgroundSize: "cover",
-            paddingTop: "3%",
-            marginTop: "-2%",
-            paddingBottom: "3%",
-            height: "100%",
-          }}>
-        <form className="rowcart">
-            <div className="colcart">
-                <Link
-                    to={`/login?redirect=shipping`}
-                    style={{ paddingRight: "3%",paddingTop:"5%", float:"right"}}
-                >
-                Proceed to Checkout
-                </Link>
-                <h1 style={{paddingLeft:"3%",paddingTop:"5%"}}>Meal Cart</h1>
-                {cartItems.length === 0 ? (
-                    <div style={{paddingLeft:"40%", paddingTop:"10%"}}>
-                        Cart is empty. <Link to="/">Go Home</Link>
-                    </div>
-                ) : (
-                        <ul>
-                            {cartItems.map((item) => (
-                                <li key={item.meal} className="cartli">
-                                    <div className="rowdisplay">
-                                        <img 
-                                            src={item.image}
-                                            alt={item.name}
-                                            className="imgcart"
-                                        ></img>
-                                        <div 
-                                         style={{width:"38%", paddingRight:"2%"}}
-                                        >
-                                            <Link to={`/meals/${item.meal}`}>{item.name}</Link>
-                                        </div>
-                                        <div 
-                                          style={{paddingRight:"3%"}}
-                                          >
-                                            <select
-                                                value={item.qty}
-                                                onChange={(e) =>
-                                                    dispatch(
-                                                        addToCart(item.meal, Number(e.target.value))
-                                                    )
-                                                }
+            style={{
+                backgroundImage: "url(/images/cartimg.jpg)",
+                backgroundPosition: "center",
+                backgroundSize: "cover",
+                paddingTop: "3%",
+                marginTop: "-2%",
+                paddingBottom: "3%",
+                height: "100%",
+            }}>
+            <form className="rowcart">
+                <div className="colcart">
+                    {cartItems.length === 0 ? (
+                        <div></div>
+                    ) : (
+                            <Link
+                                to={`/login?redirect=shipping`}
+                                style={{ paddingRight: "3%", paddingTop: "5%", float: "right" }}
+                            >
+                                Proceed to Checkout
+                            </Link>
+                        )}
+
+                    <h1 style={{ paddingLeft: "3%", paddingTop: "5%" }}>Meal Cart</h1>
+                    {cartItems.length === 0 ? (
+                        <div style={{ paddingLeft: "40%", paddingTop: "10%" }}>
+                            Cart is empty. <Link to="/">Go Home</Link>
+                        </div>
+                    ) : (
+                            <ul>
+                                {cartItems.map((item) => (
+                                    <li key={item.meal} className="cartli">
+                                        <div className="rowdisplay">
+                                            <img
+                                                src={item.image}
+                                                alt={item.name}
+                                                className="imgcart"
+                                            ></img>
+                                            <div
+                                                style={{ width: "38%", paddingRight: "2%" }}
                                             >
-                                                <option key="1" value="1">1</option>
-                                                <option key="2" value="2">2</option>
-                                                <option key="3" value="3">3</option>
-                                                <option key="4" value="4">4</option>
-                                                <option key="5" value="5">5</option>
-                                                <option key="6" value="6">6</option>
-                                                <option key="7" value="7">7</option>
-                                                <option key="8" value="8">8</option>
-                                                <option key="9" value="9">9</option>
-                                                <option key="10" value="10">10</option>
-                                            </select>
-                                        </div>
-                                        <div  style={{paddingRight:"2%"}}>${item.price}</div>
-                                        <div style={{width:"10%"}}>
-                                            <Link
-                                                type="button"
-                                                onClick={() => removeFromCartHandler(item.meal)}
+                                                <Link to={`/meals/${item.meal}`}>{item.name}</Link>
+                                            </div>
+                                            <div
+                                                style={{ paddingRight: "3%" }}
                                             >
-                                                Delete
+                                                <select
+                                                    value={item.qty}
+                                                    onChange={(e) =>
+                                                        dispatch(
+                                                            addToCart(item.meal, Number(e.target.value))
+                                                        )
+                                                    }
+                                                >
+                                                    <option key="1" value="1">1</option>
+                                                    <option key="2" value="2">2</option>
+                                                    <option key="3" value="3">3</option>
+                                                    <option key="4" value="4">4</option>
+                                                    <option key="5" value="5">5</option>
+                                                    <option key="6" value="6">6</option>
+                                                    <option key="7" value="7">7</option>
+                                                    <option key="8" value="8">8</option>
+                                                    <option key="9" value="9">9</option>
+                                                    <option key="10" value="10">10</option>
+                                                </select>
+                                            </div>
+                                            <div style={{ paddingRight: "2%" }}>${item.price}</div>
+                                            <div style={{ width: "10%" }}>
+                                                <Link
+                                                    type="button"
+                                                    onClick={() => removeFromCartHandler(item.meal)}
+                                                >
+                                                    Delete
                                             </Link>
+                                            </div>
                                         </div>
-                                    </div>
-                                </li>
-                            ))} 
-                            <div className="price">
-                                <h4>
-                                    Subtotal ({cartItems.reduce((a, c) => a + c.qty, 0)} items) : ${cartItems.reduce((a, c) => a + c.price * c.qty, 0)}
-                                </h4>
-                                <h4 style={{float:"right", paddingRight:"11%"}}>
-                                    Tax : ${roundTo(cartItems.reduce((a, c) => a + c.price * c.qty, 0)*0.13, 2)}
-                                </h4>
-                                <h3 style={{float:"right", paddingRight:"11%"}}>
-                                    Total : ${roundTo(cartItems.reduce((a, c) => a + c.price * c.qty, 0)+cartItems.reduce((a, c) => a + c.price * c.qty, 0)*0.13, 2)}
-                                </h3>
-                            </div>
-                        </ul> 
-                    )}
+                                    </li>
+                                ))}
+                                <div className="price">
+                                    <h4>
+                                        Subtotal ({cartItems.reduce((a, c) => a + c.qty, 0)} items) : ${cartItems.reduce((a, c) => a + c.price * c.qty, 0)}
+                                    </h4>
+                                    <h4 style={{ float: "right", paddingRight: "11%" }}>
+                                        Tax : ${roundTo(cartItems.reduce((a, c) => a + c.price * c.qty, 0) * 0.13, 2)}
+                                    </h4>
+                                    <h3 style={{ float: "right", paddingRight: "11%" }}>
+                                        Total : ${roundTo(cartItems.reduce((a, c) => a + c.price * c.qty, 0) + cartItems.reduce((a, c) => a + c.price * c.qty, 0) * 0.13, 2)}
+                                    </h3>
+                                </div>
+                            </ul>
+                        )}
                 </div>
-            <div style={{paddingTop:"10%", paddingLeft:"28%"}}>
-            <button stye="button"
-            style={{width:"25%"}}
-            onClick = {() => addHandler()}>Add More Meal</button>
-            <button  onClick={() => removeFromCartAll(cartItems)} disabled={cartItems.length === 0} style={{marginLeft:"15%", width:"25%"}}>Remove all meals</button>
-            </div>
-        </form>
-    </div>
+                <div style={{ paddingTop: "10%", paddingLeft: "28%" }}>
+                    <button stye="button"
+                        style={{ width: "25%" }}
+                        onClick={() => addHandler()}>Add More Meal</button>
+                    <button onClick={() => removeFromCartAll(cartItems)} disabled={cartItems.length === 0} style={{ marginLeft: "15%", width: "25%" }}>Remove all meals</button>
+                </div>
+            </form>
+        </div>
     );
 }
