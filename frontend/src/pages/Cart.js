@@ -43,7 +43,7 @@ export default function Cart(props) {
                 paddingTop: "3%",
                 marginTop: "-2%",
                 paddingBottom: "3%",
-                height: "100%",
+                height: "100%"
             }}>
             <form className="rowcart">
                 <div className="colcart">
@@ -52,7 +52,7 @@ export default function Cart(props) {
                     ) : (
                             <Link
                                 to={`/login?redirect=shipping`}
-                                style={{ paddingRight: "3%", paddingTop: "5%", float: "right" }}
+                                style={{ paddingRight: "3%", paddingTop: "5%", float: "right", textDecoration:"none" }}
                             >
                                 Proceed to Checkout
                             </Link>
@@ -74,9 +74,11 @@ export default function Cart(props) {
                                                 className="imgcart"
                                             ></img>
                                             <div
-                                                style={{ width: "38%", paddingRight: "2%" }}
+                                                style={{ width: "43%", paddingRight: "2%"}}
                                             >
-                                                <Link to={`/meals/${item.meal}`}>{item.name}</Link>
+                                                <Link 
+                                                style={{textDecoration:"none"}}
+                                                to={`/meals/${item.meal}`}>{item.name}</Link>
                                             </div>
                                             <div
                                                 style={{ paddingRight: "3%" }}
@@ -104,6 +106,7 @@ export default function Cart(props) {
                                             <div style={{ paddingRight: "2%" }}>${item.price}</div>
                                             <div style={{ width: "10%" }}>
                                                 <Link
+                                                    style={{textDecoration:"none"}}
                                                     type="button"
                                                     onClick={() => removeFromCartHandler(item.meal)}
                                                 >
