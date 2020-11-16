@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { addToCart, removeFromCart } from '../actions/cartActions';
 import { Link } from 'react-router-dom';
@@ -9,8 +9,9 @@ export default function Cart(props) {
     const mealId = props.match.params.id;
     const qty = props.location.search ? Number(props.location.search.split('=')[1])
         : 1;
-
+    const roundTo = require('round-to');
     const cart = useSelector((state) => state.cart);
+    const [show, setshow] = useState(true);
     const { cartItems } = cart;
     const dispatch = useDispatch();
     useEffect(() => {
@@ -23,34 +24,60 @@ export default function Cart(props) {
         dispatch(removeFromCart(id)); //imported from cartAction
     };
 
-    const checkoutHandler = () => {
-        props.history.push('/login?redirect=shipping');
+    const removeFromCartAll = (cartItems) =>
+    {
+       for(var i =0; i < cartItems.length; ++i)
+       {
+            dispatch(removeFromCart(cartItems[i].meal)); 
+       }      
+    }
+    
+    const addHandler = () => {
+        props.history.push('/meals?redirect=shipping');
     };
 
     return (
-        <div className="rowcart">
+        <div
+        style={{
+            backgroundImage: "url(/images/cartimg.jpg)",
+            backgroundPosition: "center",
+            backgroundSize: "cover",
+            paddingTop: "3%",
+            marginTop: "-2%",
+            paddingBottom: "3%",
+            height: "100%",
+          }}>
+        <form className="rowcart">
             <div className="colcart">
-                <h1>Meal Cart</h1>
+                <Link
+                    to={`/login?redirect=shipping`}
+                    style={{ paddingRight: "3%",paddingTop:"5%", float:"right"}}
+                >
+                Proceed to Checkout
+                </Link>
+                <h1 style={{paddingLeft:"3%",paddingTop:"5%"}}>Meal Cart</h1>
                 {cartItems.length === 0 ? (
-                    <MessageBox>
+                    <div style={{paddingLeft:"40%", paddingTop:"10%"}}>
                         Cart is empty. <Link to="/">Go Home</Link>
-                    </MessageBox>
+                    </div>
                 ) : (
                         <ul>
                             {cartItems.map((item) => (
-                                <li key={item.meal}>
+                                <li key={item.meal} className="cartli">
                                     <div className="rowdisplay">
-                                        <div>
-                                            <img
-                                                src={item.image}
-                                                alt={item.name}
-                                                className="imgcart"
-                                            ></img>
-                                        </div>
-                                        <div className="min-30">
+                                        <img 
+                                            src={item.image}
+                                            alt={item.name}
+                                            className="imgcart"
+                                        ></img>
+                                        <div 
+                                         style={{width:"38%", paddingRight:"2%"}}
+                                        >
                                             <Link to={`/meals/${item.meal}`}>{item.name}</Link>
                                         </div>
-                                        <div>
+                                        <div 
+                                          style={{paddingRight:"3%"}}
+                                          >
                                             <select
                                                 value={item.qty}
                                                 onChange={(e) =>
@@ -71,36 +98,39 @@ export default function Cart(props) {
                                                 <option key="10" value="10">10</option>
                                             </select>
                                         </div>
-                                        <div>${item.price}</div>
-                                        <div>
-                                            <button
+                                        <div  style={{paddingRight:"2%"}}>${item.price}</div>
+                                        <div style={{width:"10%"}}>
+                                            <Link
                                                 type="button"
                                                 onClick={() => removeFromCartHandler(item.meal)}
                                             >
                                                 Delete
-                                            </button>
+                                            </Link>
                                         </div>
                                     </div>
                                 </li>
-                            ))}
-                        </ul>
+                            ))} 
+                            <div className="price">
+                                <h4>
+                                    Subtotal ({cartItems.reduce((a, c) => a + c.qty, 0)} items) : ${cartItems.reduce((a, c) => a + c.price * c.qty, 0)}
+                                </h4>
+                                <h4 style={{float:"right", paddingRight:"11%"}}>
+                                    Tax : ${roundTo(cartItems.reduce((a, c) => a + c.price * c.qty, 0)*0.13, 2)}
+                                </h4>
+                                <h3 style={{float:"right", paddingRight:"11%"}}>
+                                    Total : ${roundTo(cartItems.reduce((a, c) => a + c.price * c.qty, 0)+cartItems.reduce((a, c) => a + c.price * c.qty, 0)*0.13, 2)}
+                                </h3>
+                            </div>
+                        </ul> 
                     )}
+                </div>
+            <div style={{paddingTop:"10%", paddingLeft:"28%"}}>
+            <button stye="button"
+            style={{width:"25%"}}
+            onClick = {() => addHandler()}>Add More Meal</button>
+            <button  onClick={() => removeFromCartAll(cartItems)} disabled={cartItems.length === 0} style={{marginLeft:"15%", width:"25%"}}>Remove all meals</button>
             </div>
-            <div>
-                <ul>
-                    <li>
-                        <h2>
-                            Subtotal ({cartItems.reduce((a, c) => a + c.qty, 0)} items) : ${cartItems.reduce((a, c) => a + c.price * c.qty, 0)}
-                        </h2>
-                    </li>
-                    <li>
-                        <button type="button" onClick={checkoutHandler}
-                            disabled={cartItems.length === 0}>
-                            Proceed to Checkout
-                        </button>
-                    </li>
-                </ul>
-            </div>
-        </div>
+        </form>
+    </div>
     );
 }
