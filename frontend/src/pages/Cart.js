@@ -52,7 +52,6 @@ export default function Cart(props) {
                 <Link
                     to={`/login?redirect=shipping`}
                     style={{ paddingRight: "3%",paddingTop:"5%", float:"right"}}
-                    onClick={() => removeFromCartAll(cartItems)}
                 >
                 Proceed to Checkout
                 </Link>
@@ -129,7 +128,7 @@ export default function Cart(props) {
             <button stye="button"
             style={{width:"25%"}}
             onClick = {() => addHandler()}>Add More Meal</button>
-            <button disabled={cartItems.length === 0} style={{marginLeft:"15%", width:"25%"}}>Paid</button>
+            <button  onClick={() => removeFromCartAll(cartItems)} disabled={cartItems.length === 0} style={{marginLeft:"15%", width:"25%"}}>Remove all meals</button>
             </div>
         </form>
     </div>
