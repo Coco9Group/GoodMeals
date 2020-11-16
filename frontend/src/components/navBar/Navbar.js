@@ -112,6 +112,11 @@ function Navbar() {
             </Link>
             <ul className="userdropdown-content">
               <li>
+                <Link to="/profile">
+                  User Profile
+                </Link>
+              </li>
+              <li>
                 <Link to="#logout" onClick={logoutHandler}>
                   Log Out
                 </Link>
@@ -119,8 +124,8 @@ function Navbar() {
             </ul>
           </div>
         ) : (
-          <Button className="nav-button" />
-        )}
+            <Button className="nav-button" />
+          )}
       </nav>
     </div>
   );

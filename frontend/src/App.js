@@ -20,6 +20,7 @@ import Order from "./pages/Order";
 import OrderHistory from "./pages/OrderHistory";
 import Cart from "./pages/Cart";
 import Profile from "./pages/Profile";
+import PrivateRoute from './components/PrivateRoute';
 
 function App() {
   return (
@@ -44,7 +45,7 @@ function App() {
           <Route path="/order" exact component={Order} />
           <Route path="/orderhistory" exact component={OrderHistory} />
           <Route path="/cart/:id?" exact component={Cart} />
-          <Route path="/profile" exact component={Profile} />
+          <PrivateRoute path="/profile" exact component={Profile}></PrivateRoute>
         </Switch>
       </div>
       <Footer />
