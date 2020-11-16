@@ -10,6 +10,16 @@ const mapS = {
 class AboutUs extends Component {
   render() {
     return (
+      <div
+      style={{
+        backgroundImage: "url(/images/marbleimg.jpg)",
+        backgroundPosition: "center",
+        backgroundSize: "cover",
+        paddingTop: "5%",
+        marginTop: "-2%",
+        paddingBottom: "3%",
+        height: "100%",
+      }}>
       <div className="main">
         <h1>About us</h1>
         <p>
@@ -53,6 +63,7 @@ class AboutUs extends Component {
             </Map>
           </div>
         </div>
+      </div>
       </div>
     );
   }

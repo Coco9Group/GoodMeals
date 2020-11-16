@@ -11,8 +11,19 @@ class PageReview extends Component {
   render() {
   return (
       <>
-      <div style={{alignContent:"center"}}>
+      <div
+        style={{
+          backgroundImage: "url(/images/foodimg.PNG)",
+          backgroundPosition: "center",
+          backgroundSize: "cover",
+          paddingTop: "5%",
+          marginTop: "-2%",
+          paddingBottom: "3%",
+          height: "100%",
+        }}>
+      <div>
         <Card className="card card-5">
+        <div style={{display:"flex"}}>
         <CardHeader
           avatar={
             <Avatar className="avatar">
@@ -20,11 +31,15 @@ class PageReview extends Component {
             </Avatar>
             }
           title = "Philip "
-          subheader="Greate healthy food"
+          subheader=""
         />
-        <Rating name="read-only" value={5} readOnly style={{paddingLeft:"3%"}} />   
-        <CardContent>
+        <Rating name="read-only" value={5} readOnly style={{paddingLeft:"3%",paddingTop:"2%"}} />   
+        </div>
+        <CardContent style={{display:"inline-block"}}>
         <Typography>
+          Greate healthy food
+          </Typography>
+          <Typography >
          Great recipes, easy to follow, and very yummy dishes. 
           </Typography>
         </CardContent>
@@ -32,6 +47,7 @@ class PageReview extends Component {
       </div>
       <div style={{alignContent:"center"}}>
         <Card className="card card-5">
+        <div style={{display:"flex"}}>
         <CardHeader
           avatar={
             <Avatar className="avatar">
@@ -39,10 +55,14 @@ class PageReview extends Component {
             </Avatar>
             }
           title = "Staphan"
-          subheader="Easy ordering and changing, great food and groceries"
+          subheader=""
         />
-        <Rating name="read-only" value={5} readOnly style={{paddingLeft:"3%"}} />   
-        <CardContent>
+        <Rating name="read-only" value={5} readOnly style={{paddingLeft:"3%",paddingTop:"2%"}} />   
+        </div>
+        <CardContent style={{display:"inline-block"}}>
+        <Typography>
+        Easy ordering and changing, great food and groceries
+        </Typography>
         <Typography>
         Easy to use the ording process
           </Typography>
@@ -51,6 +71,7 @@ class PageReview extends Component {
       </div>
       <div style={{alignContent:"center"}}>
         <Card className="card card-5">
+        <div style={{display:"flex"}}>
         <CardHeader
           avatar={
             <Avatar className="avatar">
@@ -60,7 +81,8 @@ class PageReview extends Component {
           title = "Tony"
           subheader=""
         />
-        <Rating name="read-only" value={5} readOnly style={{paddingLeft:"3%"}} />   
+        <Rating name="read-only" value={5} readOnly style={{paddingLeft:"3%" ,paddingTop:"2%"}} />   
+        </div>
         <CardContent>
         <Typography>
           Some quick example text to build on the card title and make up the bulk of
@@ -71,6 +93,7 @@ class PageReview extends Component {
       </div>
       <div style={{alignContent:"center"}}>
         <Card className="card card-5">
+        <div style={{display:"flex"}}>
         <CardHeader
           avatar={
             <Avatar className="avatar">
@@ -80,7 +103,8 @@ class PageReview extends Component {
           title = "Liaane"
           subheader=""
         />
-        <Rating name="read-only" value={5} readOnly style={{paddingLeft:"3%"}} />   
+        <Rating name="read-only" value={5} readOnly style={{paddingLeft:"3%",paddingTop:"2%"}} />   
+        </div>
         <CardContent>
         <Typography>
           Some quick example text to build on the card title and make up the bulk of
@@ -91,6 +115,7 @@ class PageReview extends Component {
       </div>
       <div style={{alignContent:"center"}}>
         <Card className="card card-5">
+        <div style={{display:"flex"}}>
         <CardHeader
           avatar={
             <Avatar className="avatar">
@@ -100,7 +125,8 @@ class PageReview extends Component {
           title = "Jim"
           subheader=""
         />
-        <Rating name="read-only" value={5} readOnly style={{paddingLeft:"3%"}} />   
+        <Rating name="read-only" value={5} readOnly style={{paddingLeft:"3%",paddingTop:"2%"}} />   
+        </div>
         <CardContent>
         <Typography>
           Some quick example text to build on the card title and make up the bulk of
@@ -108,6 +134,7 @@ class PageReview extends Component {
           </Typography>
         </CardContent>
         </Card>
+      </div>
       </div>
       </>
     );
