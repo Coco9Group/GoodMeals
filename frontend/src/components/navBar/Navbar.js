@@ -107,25 +107,32 @@ function Navbar() {
         </ul>
         {userInfo ? (
           <div className="userdropdown">
-            <Link to="#">
+            <Link to="#" style={{ color: "khaki" }}>
               {userInfo.name} <i className="fa fa-caret-down"></i>{" "}
             </Link>
             <ul className="userdropdown-content">
               <li>
-                <Link to="/profile">
+                <Link
+                  to="/profile"
+                  style={{ color: "white", textDecoration: "none" }}
+                >
                   User Profile
                 </Link>
               </li>
               <li>
-                <Link to="#logout" onClick={logoutHandler}>
+                <Link
+                  to="#logout"
+                  onClick={logoutHandler}
+                  style={{ color: "white", textDecoration: "none" }}
+                >
                   Log Out
                 </Link>
               </li>
             </ul>
           </div>
         ) : (
-            <Button className="nav-button" />
-          )}
+          <Button className="nav-button" />
+        )}
       </nav>
     </div>
   );

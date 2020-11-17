@@ -13,6 +13,15 @@ const useStyles = makeStyles((theme) => ({
   heading: {
     fontSize: theme.typography.pxToRem(16),
   },
+  divDivider: {
+    backgroundColor: "teal",
+    textAlign: "center",
+    color: "#ffffff",
+    paddingTop: "1%",
+    paddingBottom: "1%",
+    marginTop: "3%",
+    marginBottom: "4%",
+  },
 }));
 
 export default function Faq() {
@@ -20,17 +29,8 @@ export default function Faq() {
 
   return (
     <div style={{ paddingBottom: "4%" }}>
-      <div>
-        <Typography
-          style={{
-            fontSize: "50px",
-            marginLeft: "45%",
-            marginTop: "1.5%",
-            marginBottom: "2%",
-          }}
-        >
-          FAQ's
-        </Typography>
+      <div class="col-xs-12" className={classes.divDivider}>
+        <h1>Frequently Asked Questions</h1>
       </div>
       <div className={classes.root} style={{ width: "70%", marginLeft: "15%" }}>
         <Accordion style={{ marginTop: "2%" }}>
