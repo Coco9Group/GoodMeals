@@ -61,7 +61,7 @@ export default function Cart(props) {
                     <h1 style={{ paddingLeft: "3%", paddingTop: "5%" }}>Meal Cart</h1>
                     {cartItems.length === 0 ? (
                         <div style={{ paddingLeft: "40%", paddingTop: "10%" }}>
-                            Cart is empty. <Link to="/">Go Home</Link>
+                            Cart is empty. <Link to="/meals">Go Meals</Link>
                         </div>
                     ) : (
                             <ul>

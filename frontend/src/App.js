@@ -21,6 +21,8 @@ import OrderHistory from "./pages/OrderHistory";
 import Cart from "./pages/Cart";
 import Profile from "./pages/Profile";
 import PrivateRoute from './components/PrivateRoute';
+import ShippingAddress from "./pages/ShippingAddress";
+import PaymentMethod from './pages/PaymentMethod';
 
 function App() {
   return (
@@ -46,6 +48,8 @@ function App() {
           <Route path="/orderhistory" exact component={OrderHistory} />
           <Route path="/cart/:id?" exact component={Cart} />
           <PrivateRoute path="/profile" exact component={Profile}></PrivateRoute>
+          <Route path="/shipping" exact component={ShippingAddress} />
+          <Route path="/payment" exact component={PaymentMethod} />
         </Switch>
       </div>
       <Footer />
