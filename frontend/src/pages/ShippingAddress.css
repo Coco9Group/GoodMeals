@@ -1,0 +1,35 @@
+.deliveryinfo {
+  width: 380px;
+  margin-left: 19em;
+  margin-top: 1%;
+  margin-bottom: 5%;
+  padding-bottom: 4%;
+  background-color: rgb(237, 240, 243);
+  padding-left: 2em;
+  padding-top: 2em;
+}
+
+.addressform {
+  margin-top: 1em;
+}
+
+.paybutton {
+  margin-top: 2em;
+  text-align: center;
+  width: 45%;
+  margin-left: 22%;
+}
+.deliverymethod {
+  margin-left: 1em;
+}
+.shipinfo {
+  margin-left: 1em;
+  margin-top: 0.5em;
+}
+.addressdiv {
+  display: flex;
+  margin-top: 0.5em;
+}
+.addresslable {
+  width: 40%;
+}

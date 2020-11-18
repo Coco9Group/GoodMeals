@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { saveShippingAddress } from '../actions/cartActions';
 import { saveDeliveryMethod } from '../actions/cartActions';
 import CheckoutSteps from '../components/CheckoutSteps';
-
+import "./ShippingAddress.css";
 export default function ShippingAddress(props) {
     const userLogin = useSelector((state) => state.userLogin);
     const { userInfo } = userLogin;
@@ -30,16 +30,27 @@ export default function ShippingAddress(props) {
     };
 
     return (
-        <div>
+        <div
+        style={{
+            backgroundImage: "url(/images/paymentimg2.jpg)",
+            backgroundPosition: "center",
+            backgroundSize: "cover",
+            paddingTop: "3%",
+            marginTop: "-2%",
+            paddingBottom: "3%",
+            height: "100%",
+            paddingLeft:"2em"
+        }}>
             <CheckoutSteps step1 step2></CheckoutSteps>
+            <div className="deliveryinfo">
             <div>
                 <h1>Delivery Information</h1>
             </div>
-            <div>
+            <div className="deliverymethod">
                 <h2>Delivery Method </h2>
             </div>
 
-            <div>
+            <div className="deliverymethod shipinfo">
                 <div>
                     <input
                         type="radio"
@@ -53,7 +64,7 @@ export default function ShippingAddress(props) {
                     <label htmlFor="ship">Ship</label>
                 </div>
             </div>
-            <div>
+            <div className="deliverymethod shipinfo">
                 <div>
                     <input
                         type="radio"
@@ -68,14 +79,14 @@ export default function ShippingAddress(props) {
                 </div>
             </div>
 
-            <form onSubmit={submitHandler}>
+            <form className="addressform" onSubmit={submitHandler}>
                 {deliveryMethod === 'Ship' ? (
                     <div>
                         <div>
                             <h2>Shipping Address </h2>
                         </div>
-                        <div>
-                            <label htmlFor="fullName">Name</label>
+                        <div className="addressdiv">
+                            <label className="addresslable" htmlFor="fullName">Name</label>
                             <input
                                 type="text"
                                 id="fullName"
@@ -85,8 +96,8 @@ export default function ShippingAddress(props) {
                                 required
                             ></input>
                         </div>
-                        <div>
-                            <label htmlFor="address">Address</label>
+                        <div className="addressdiv">
+                            <label className="addresslable" htmlFor="address">Address</label>
                             <input
                                 type="text"
                                 id="address"
@@ -96,8 +107,8 @@ export default function ShippingAddress(props) {
                                 required
                             ></input>
                         </div>
-                        <div>
-                            <label htmlFor="city">City</label>
+                        <div className="addressdiv">
+                            <label className="addresslable" htmlFor="city">City</label>
                             <input
                                 type="text"
                                 id="city"
@@ -107,8 +118,8 @@ export default function ShippingAddress(props) {
                                 required
                             ></input>
                         </div>
-                        <div>
-                            <label htmlFor="postalCode">Postal Code</label>
+                        <div className="addressdiv">
+                            <label className="addresslable" htmlFor="postalCode">Postal Code</label>
                             <input
                                 type="text"
                                 id="postalCode"
@@ -118,8 +129,8 @@ export default function ShippingAddress(props) {
                                 required
                             ></input>
                         </div>
-                        <div>
-                            <label htmlFor="phone">Phone</label>
+                        <div className="addressdiv">
+                            <label className="addresslable" htmlFor="phone">Phone</label>
                             <input
                                 type="text"
                                 id="country"
@@ -140,14 +151,14 @@ export default function ShippingAddress(props) {
                         </div>
                     )
                 }
-
-                <div>
-                    <label />
-                    <button type="submit">
+                    <div>
+                    <button className="paybutton" type="submit">
                         Continue To Payment
                     </button>
                 </div>
             </form>
+
+            </div>
         </div>
     );
 }

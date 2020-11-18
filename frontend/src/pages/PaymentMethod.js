@@ -27,7 +27,17 @@ export default function PaymentMethod(props) {
         props.history.push('/placeorder');
     };
     return (
-        <div>
+        <div
+        style={{
+            backgroundImage: "url(/images/paymentimg2.jpg)",
+            backgroundPosition: "center",
+            backgroundSize: "cover",
+            paddingTop: "3%",
+            marginTop: "-2%",
+            paddingBottom: "3%",
+            height: "100%",
+            paddingLeft:"2em"
+        }}> 
             <CheckoutSteps step1 step2 step3></CheckoutSteps>
             <form onSubmit={submitHandler}>
                 <div>
