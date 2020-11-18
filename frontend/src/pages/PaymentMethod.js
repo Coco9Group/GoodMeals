@@ -65,7 +65,7 @@ export default function PaymentMethod(props) {
                 {paymentMethod === 'CreditCard' ? (
                     <div>
                         <div>
-                            <h2>Creadit Card Information </h2>
+                            <h2>Credit Card Information </h2>
                         </div>
                         <div>
                             <label htmlFor="holderName">Card Holder</label>

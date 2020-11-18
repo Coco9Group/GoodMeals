@@ -52,104 +52,105 @@ export default function Order(props) {
     ) : error ? (
         <MessageBox variant="danger">{error}</MessageBox>
     ) : (
-        <div>
-            <h1>Ordered Successfully! Your Order Details</h1>
-            <h2>Order Number: {order._id}</h2>
-            <div className="porow top">
-                <div className="pocol-2">
-                    <ul>
-                        <li>
-                            <div className="pocard pocard-body">
-                                <h2>Delivery Information</h2>
-                                {order.deliveryMethod === 'Ship' ? (
-                                    <div><p>
-                                    <strong>Name:</strong> {order.shippingAddress.fullName} <br />
-                                    <strong>Address: </strong> {order.shippingAddress.address}, {order.shippingAddress.city}, {order.shippingAddress.postalCode}<br />
-                                    <strong>Phone:</strong> {order.shippingAddress.phone}
-                                    </p></div>
-                                    ) : (
-                                        <div>
-                                            Pickup location
-                
-                                            GoodMeals
-                                            345 Oxford Street, London N56B3C
-                                        </div>
-                                    )
-                                }
-                            </div>
-                        </li>
-                        <li>
-                            <div className="pocard pocard-body">
-                                <h2>Payment</h2>
-                                <p>
-                                    <strong>{order.paymentMethod}</strong>
-
-                                    {order.paymentMethod === 'CreditCard' ? (
-                                        <div><strong>Card Holder:</strong> {order.creditCardInfo.holderName} <br />
-                                        <strong>Card Number: </strong> {order.creditCardInfo.cardNumber.substring(0, 7)} *******<br />
-                                        <strong>Expiry Date: </strong> {order.creditCardInfo.expiryDate}<br /></div>
+                <div>
+                    <h1>Ordered Successfully! Your Order Details</h1>
+                    <h2>Order Number: {order._id}</h2>
+                    <div className="porow top">
+                        <div className="pocol-2">
+                            <ul>
+                                <li>
+                                    <div className="pocard pocard-body">
+                                        <h2>Delivery Information</h2>
+                                        {order.deliveryMethod === 'Ship' ? (
+                                            <div><p>
+                                                <strong>Name:</strong> {order.shippingAddress.fullName} <br />
+                                                <strong>Address: </strong> {order.shippingAddress.address}, {order.shippingAddress.city}, {order.shippingAddress.postalCode}<br />
+                                                <strong>Phone:</strong> {order.shippingAddress.phone}
+                                            </p></div>
                                         ) : (
-                                        <div></div>
-                                    )
-                                }  
-                                </p>
-                            </div>
-                        </li>
-                        <li>
-                            <div className="pocard pocard-body">
-                                <h2>Order Items</h2>
-                                <ul>
-                                    {order.orderItems.map((item) => (
-                                        <li key={item.meal}>
-                                            <div className="porow">
                                                 <div>
-                                                    <img
-                                                        src={item.image}
-                                                        alt={item.name}
-                                                    ></img>
+                                                    Pickup
+                                                    - pickup location
+                                                    GoodMeals
+                                                    345 Oxford Street, London N56B3C
+                                                    phone: 519)555-6686
                                                 </div>
-                                                <div className="pomin-30">
-                                                    <Link to={`/meal/${item.meal}`}>
-                                                        {item.name}
-                                                    </Link>
-                                                </div>
-                                                <div>
-                                                    {item.qty} x ${item.price} = ${item.qty * item.price}
-                                                </div>
-                                            </div>
-                                        </li>
-                                    ))}
-                                </ul>
-                            </div>
-                        </li>
+                                            )
+                                        }
+                                    </div>
+                                </li>
+                                <li>
+                                    <div className="pocard pocard-body">
+                                        <h2>Payment</h2>
+                                        <p>
+                                            <strong>{order.paymentMethod}</strong>
 
-                        <li>
-                            <div className="pocard pocard-body">
-                                <h2>Order Summary</h2>
-                                <p>
-                                    <strong>Items:</strong> ${order.itemsPrice.toFixed(2)} <br />
-                                    <strong>Tax: </strong> ${order.taxPrice.toFixed(2)}<br />
-                                    <strong>Total:</strong> <strong>${order.totalPrice.toFixed(2)}</strong>
-                                </p>
-                            </div>
-                        </li>
-                        {order.paymentMethod === "PayPal" && (
-                            <li>
-                                {!sdkReady ? (
-                                    <LoadingBox></LoadingBox>
-                                ) : (
-                                        <>
-                                            <PayPalButton
-                                                amount={order.totalPrice}
-                                                onSuccess={successPaymentHandler}
-                                            ></PayPalButton>
-                                        </>
-                                    )}
-                            </li>
-                        )}
-                    </ul>
+                                            {order.paymentMethod === 'CreditCard' ? (
+                                                <div><strong>Card Holder:</strong> {order.creditCardInfo.holderName} <br />
+                                                    <strong>Card Number: </strong> {order.creditCardInfo.cardNumber.substring(0, 7)} *******<br />
+                                                    <strong>Expiry Date: </strong> {order.creditCardInfo.expiryDate}<br /></div>
+                                            ) : (
+                                                    <div></div>
+                                                )
+                                            }
+                                        </p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div className="pocard pocard-body">
+                                        <h2>Order Items</h2>
+                                        <ul>
+                                            {order.orderItems.map((item) => (
+                                                <li key={item.meal}>
+                                                    <div className="porow">
+                                                        <div>
+                                                            <img
+                                                                src={item.image}
+                                                                alt={item.name}
+                                                            ></img>
+                                                        </div>
+                                                        <div className="pomin-30">
+                                                            <Link to={`/meal/${item.meal}`}>
+                                                                {item.name}
+                                                            </Link>
+                                                        </div>
+                                                        <div>
+                                                            {item.qty} x ${item.price} = ${item.qty * item.price}
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                            ))}
+                                        </ul>
+                                    </div>
+                                </li>
+
+                                <li>
+                                    <div className="pocard pocard-body">
+                                        <h2>Order Summary</h2>
+                                        <p>
+                                            <strong>Items:</strong> ${order.itemsPrice.toFixed(2)} <br />
+                                            <strong>Tax: </strong> ${order.taxPrice.toFixed(2)}<br />
+                                            <strong>Total:</strong> <strong>${order.totalPrice.toFixed(2)}</strong>
+                                        </p>
+                                    </div>
+                                </li>
+                                {order.paymentMethod === "PayPal" && (
+                                    <li>
+                                        {!sdkReady ? (
+                                            <LoadingBox></LoadingBox>
+                                        ) : (
+                                                <>
+                                                    <PayPalButton
+                                                        amount={order.totalPrice}
+                                                        onSuccess={successPaymentHandler}
+                                                    ></PayPalButton>
+                                                </>
+                                            )}
+                                    </li>
+                                )}
+                            </ul>
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </div>
-    );
+            );
 }

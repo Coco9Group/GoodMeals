@@ -33,7 +33,7 @@ export default function ShippingAddress(props) {
         <div>
             <CheckoutSteps step1 step2></CheckoutSteps>
             <div>
-                <h1>Delivery Infomation</h1>
+                <h1>Delivery Information</h1>
             </div>
             <div>
                 <h2>Delivery Method </h2>
@@ -132,10 +132,11 @@ export default function ShippingAddress(props) {
                     </div>
                 ) : (
                         <div>
-                            Pickup location
-
+                            Pickup
+                            - pickup location
                             GoodMeals
                             345 Oxford Street, London N56B3C
+                            phone: 519)555-6686
                         </div>
                     )
                 }

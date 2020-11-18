@@ -46,20 +46,21 @@ export default function PlaceOrder(props) {
                                 <h2>Delivery Information</h2>
 
                                 {cart.deliveryMethod === 'Ship' ? (
-                                        <div><p>
+                                    <div><p>
                                         <strong>Name:</strong> {cart.shippingAddress.fullName} <br />
                                         <strong>Address: </strong> {cart.shippingAddress.address}, {cart.shippingAddress.city}, {cart.shippingAddress.postalCode}<br />
                                         <strong>Phone:</strong> {cart.shippingAddress.phone}
-                                        </p></div>
-                                    ) : (
+                                    </p></div>
+                                ) : (
                                         <div>
-                                            Pickup location
-                
+                                            Pickup
+                                            - pickup location
                                             GoodMeals
                                             345 Oxford Street, London N56B3C
+                                            phone: 519)555-6686
                                         </div>
                                     )
-                                }                                
+                                }
                             </div>
                         </li>
                         <li>
@@ -70,12 +71,12 @@ export default function PlaceOrder(props) {
 
                                     {cart.paymentMethod === 'CreditCard' ? (
                                         <div><strong>Card Holder:</strong> {cart.creditCardInfo.holderName} <br />
-                                        <strong>Card Number: </strong> {cart.creditCardInfo.cardNumber.substring(0, 7)} *******<br />
-                                        <strong>Expiry Date: </strong> {cart.creditCardInfo.expiryDate}<br /></div>
-                                        ) : (
-                                        <div>After clicking “Place order”, you will see PayPal button to complete your purchase securely.</div>
-                                    )
-                                }  
+                                            <strong>Card Number: </strong> {cart.creditCardInfo.cardNumber.substring(0, 7)} *******<br />
+                                            <strong>Expiry Date: </strong> {cart.creditCardInfo.expiryDate}<br /></div>
+                                    ) : (
+                                            <div>After clicking “Place order”, you will see PayPal button to complete your purchase securely.</div>
+                                        )
+                                    }
                                 </p>
                             </div>
                         </li>
