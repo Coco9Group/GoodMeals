@@ -10,14 +10,13 @@ const Footer = () => {
       style={{
         paddingTop: "3%",
         paddingBottom: "2%",
-        borderTop: "solid",
+        borderTop: "outset",
       }}
     >
       <div
         className="row pt-5"
         style={{ paddingLeft: "30%", textDecoration: "none" }}
       >
-        {/* Col 1 */}
         <div className="col-sm-3 col-xs-12">
           <h3>Menu</h3>
           <ul className="list-inline mx-auto justify-content-center">
@@ -36,7 +35,7 @@ const Footer = () => {
             </Link>
           </ul>
         </div>
-        {/* Col 2 */}
+
         <div className="col-sm-3 col-xs-12">
           <h3>Support</h3>
           <ul className="list-inline mx-auto justify-content-center">
@@ -55,7 +54,7 @@ const Footer = () => {
             </Link>
           </ul>
         </div>
-        {/* Col 3 */}
+
         <div className="col-sm-3 col-xs-12">
           <h3>Company</h3>
           <ul className="list-inline mx-auto justify-content-center">
