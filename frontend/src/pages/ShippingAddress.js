@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { saveShippingAddress } from '../actions/cartActions';
 import { saveDeliveryMethod } from '../actions/cartActions';
 import CheckoutSteps from '../components/CheckoutSteps';
-import "./ShippingAddress.css";
+import "./checkout.css";
 export default function ShippingAddress(props) {
     const userLogin = useSelector((state) => state.userLogin);
     const { userInfo } = userLogin;
@@ -42,15 +42,15 @@ export default function ShippingAddress(props) {
             paddingLeft:"2em"
         }}>
             <CheckoutSteps step1 step2></CheckoutSteps>
-            <div className="deliveryinfo">
+            <div className="forminfo">
             <div>
                 <h1>Delivery Information</h1>
             </div>
-            <div className="deliverymethod">
+            <div className="subt">
                 <h2>Delivery Method </h2>
             </div>
 
-            <div className="deliverymethod shipinfo">
+            <div className="subt decideinfo">
                 <div>
                     <input
                         type="radio"
@@ -61,10 +61,10 @@ export default function ShippingAddress(props) {
                         checked={deliveryMethod === "Ship"}
                         onChange={(e) => setDeliveryMethod(e.target.value)}
                     ></input>
-                    <label htmlFor="ship">Ship</label>
+                    <label className="subt" htmlFor="ship">Ship</label>
                 </div>
             </div>
-            <div className="deliverymethod shipinfo">
+            <div className="subt decideinfo">
                 <div>
                     <input
                         type="radio"
@@ -75,18 +75,18 @@ export default function ShippingAddress(props) {
                         checked={deliveryMethod === "Pickup"}
                         onChange={(e) => setDeliveryMethod(e.target.value)}
                     ></input>
-                    <label htmlFor="pickup">Pick Up</label>
+                    <label className="subt" htmlFor="pickup">Pick Up</label>
                 </div>
             </div>
 
-            <form className="addressform" onSubmit={submitHandler}>
+            <form className="infoform" onSubmit={submitHandler}>
                 {deliveryMethod === 'Ship' ? (
                     <div>
                         <div>
                             <h2>Shipping Address </h2>
                         </div>
-                        <div className="addressdiv">
-                            <label className="addresslable" htmlFor="fullName">Name</label>
+                        <div className="infodiv">
+                            <label className="infolable" htmlFor="fullName">Name</label>
                             <input
                                 type="text"
                                 id="fullName"
@@ -96,8 +96,8 @@ export default function ShippingAddress(props) {
                                 required
                             ></input>
                         </div>
-                        <div className="addressdiv">
-                            <label className="addresslable" htmlFor="address">Address</label>
+                        <div className="infodiv">
+                            <label className="infolable" htmlFor="address">Address</label>
                             <input
                                 type="text"
                                 id="address"
@@ -107,8 +107,8 @@ export default function ShippingAddress(props) {
                                 required
                             ></input>
                         </div>
-                        <div className="addressdiv">
-                            <label className="addresslable" htmlFor="city">City</label>
+                        <div className="infodiv">
+                            <label className="infolable" htmlFor="city">City</label>
                             <input
                                 type="text"
                                 id="city"
@@ -118,8 +118,8 @@ export default function ShippingAddress(props) {
                                 required
                             ></input>
                         </div>
-                        <div className="addressdiv">
-                            <label className="addresslable" htmlFor="postalCode">Postal Code</label>
+                        <div className="infodiv">
+                            <label className="infolable" htmlFor="postalCode">Postal Code</label>
                             <input
                                 type="text"
                                 id="postalCode"
@@ -129,8 +129,8 @@ export default function ShippingAddress(props) {
                                 required
                             ></input>
                         </div>
-                        <div className="addressdiv">
-                            <label className="addresslable" htmlFor="phone">Phone</label>
+                        <div className="infodiv">
+                            <label className="infolable" htmlFor="phone">Phone</label>
                             <input
                                 type="text"
                                 id="country"
@@ -142,17 +142,18 @@ export default function ShippingAddress(props) {
                         </div>
                     </div>
                 ) : (
-                        <div>
-                            Pickup
-                            - pickup location
-                            GoodMeals
-                            345 Oxford Street, London N56B3C
-                            phone: 519)555-6686
+                        <div className="message">
+                            <h2>Pickup - pickup location</h2>
+                            <div style={{paddingLeft:"1em"}}>
+                            <p>GoodMeals</p>
+                            <p>345 Oxford Street, London N56B3C</p>
+                            <p>phone: 519)555-6686</p>
+                            </div>
                         </div>
                     )
                 }
                     <div>
-                    <button className="paybutton" type="submit">
+                    <button className="checkbutton" type="submit">
                         Continue To Payment
                     </button>
                 </div>

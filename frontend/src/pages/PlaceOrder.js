@@ -5,6 +5,7 @@ import CheckoutSteps from '../components/CheckoutSteps';
 import LoadingBox from '../components/LoadingBox';
 import MessageBox from '../components/MessageBox';
 import "./Order.css";
+
 import { createOrder } from '../actions/orderActions';
 import { ORDER_CREATE_RESET } from '../constants/orderConstants';
 
@@ -36,11 +37,21 @@ export default function PlaceOrder(props) {
     }, [dispatch, order, props.history, success]);
 
     return (
-        <div>
+        <div
+        style={{
+            backgroundImage: "url(/images/paymentimg2.jpg)",
+            backgroundPosition: "center",
+            backgroundSize: "cover",
+            paddingTop: "3%",
+            marginTop: "-2%",
+            paddingBottom: "3%",
+            height: "100%",
+            paddingLeft:"2em"
+        }}>
             <CheckoutSteps step1 step2 step3 step4></CheckoutSteps>
             <div className="porow top">
                 <div className="pocol-2">
-                    <ul>
+                    <ul >
                         <li>
                             <div className="pocard pocard-body">
                                 <h2>Delivery Information</h2>

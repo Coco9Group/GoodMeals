@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { savePaymentMethod } from '../actions/cartActions';
 import { saveCreditCardInfo } from '../actions/cartActions';
 import CheckoutSteps from '../components/CheckoutSteps';
+import "./checkout.css";
 
 export default function PaymentMethod(props) {
     const cart = useSelector((state) => state.cart);
@@ -39,11 +40,11 @@ export default function PaymentMethod(props) {
             paddingLeft:"2em"
         }}> 
             <CheckoutSteps step1 step2 step3></CheckoutSteps>
-            <form onSubmit={submitHandler}>
+            <form  className="forminfo" onSubmit={submitHandler}>
                 <div>
                     <h1>Payment</h1>
                 </div>
-                <div>
+                <div  className="subt decideinfo">
                     <div>
                         <input
                             type="radio"
@@ -54,10 +55,10 @@ export default function PaymentMethod(props) {
                             checked={paymentMethod === "CreditCard"}
                             onChange={(e) => setPaymentMethod(e.target.value)}
                         ></input>
-                        <label htmlFor="creditcard">Credit Card</label>
+                        <label className="subt" htmlFor="creditcard">Credit Card</label>
                     </div>
                 </div>
-                <div>
+                <div  className="subt decideinfo">
                     <div>
                         <input
                             type="radio"
@@ -68,17 +69,17 @@ export default function PaymentMethod(props) {
                             checked={paymentMethod === "PayPal"}
                             onChange={(e) => setPaymentMethod(e.target.value)}
                         ></input>
-                        <label htmlFor="paypal">PayPal</label>
+                        <label className="subt" htmlFor="paypal">PayPal</label>
                     </div>
                 </div>
 
                 {paymentMethod === 'CreditCard' ? (
-                    <div>
+                    <div className="infoform" >
                         <div>
                             <h2>Credit Card Information </h2>
                         </div>
-                        <div>
-                            <label htmlFor="holderName">Card Holder</label>
+                        <div className="infodiv">
+                            <label className="infolable" htmlFor="holderName">Card Holder</label>
                             <input
                                 type="text"
                                 id="holderName"
@@ -88,8 +89,8 @@ export default function PaymentMethod(props) {
                                 required
                             ></input>
                         </div>
-                        <div>
-                            <label htmlFor="cardNumber">Card Number</label>
+                        <div className="infodiv">
+                            <label className="infolable" htmlFor="cardNumber">Card Number</label>
                             <input
                                 type="text"
                                 id="cardNumber"
@@ -99,8 +100,8 @@ export default function PaymentMethod(props) {
                                 required
                             ></input>
                         </div>
-                        <div>
-                            <label htmlFor="expiryDate">Expiry Date</label>
+                        <div className="infodiv">
+                            <label className="infolable" htmlFor="expiryDate">Expiry Date</label>
                             <input
                                 type="text"
                                 id="expiryDate"
@@ -110,8 +111,8 @@ export default function PaymentMethod(props) {
                                 required
                             ></input>
                         </div>
-                        <div>
-                            <label htmlFor="securityCode">Security Code</label>
+                        <div className="infodiv">
+                            <label className="infolable" htmlFor="securityCode">Security Code</label>
                             <input
                                 type="text"
                                 id="securityCode"
@@ -123,13 +124,11 @@ export default function PaymentMethod(props) {
                         </div>
                     </div>
                 ) : (
-                        <div>After clicking “Place order”, you will see PayPal button to complete your purchase securely.</div>
+                        <div className="message">After clicking “Place order”, you will see PayPal button to complete your purchase securely.</div>
                     )
                 }
-
                 <div>
-                    <label />
-                    <button type="submit">
+                    <button className="checkbutton" type="submit">
                         Continue to Order
                     </button>
                 </div>
