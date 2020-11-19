@@ -1,7 +1,12 @@
 .porow {
   width: 800px;
+  margin-left: 15em;
+}
+.mrgauto {
+  width: 800px;
   margin: auto;
 }
+
 .orderlist {
   display: flex;
   flex-wrap: wrap;

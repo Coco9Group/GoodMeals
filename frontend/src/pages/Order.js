@@ -68,7 +68,7 @@ export default function Order(props) {
                         <h2> Your Order Details</h2>
                         <h2>Order Number: {order._id}</h2>
                     </div>
-                    <div className="porow top">
+                    <div className="mrgauto top">
                         <div className="pocol-2">
                             <ul>
                                 <li className="unli">
