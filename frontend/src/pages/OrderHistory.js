@@ -12,7 +12,17 @@ export default function OrderHistory(props) {
         dispatch(listOrderMine());
     }, [dispatch]);
     return (
-        <div>
+        <div
+        style={{
+            backgroundImage: "url(/images/orderimg.jpg)",
+            backgroundPosition: "center",
+            backgroundSize: "cover",
+            paddingTop: "3%",
+            marginTop: "-2%",
+            paddingBottom: "3%",
+            height: "100%",
+            paddingLeft:"2em"
+        }}>
             <h1>Order History</h1>
             {loading ? (
                 <LoadingBox></LoadingBox>

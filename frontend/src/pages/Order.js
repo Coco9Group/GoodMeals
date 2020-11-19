@@ -54,7 +54,7 @@ export default function Order(props) {
     ) : (
                     <div
                     style={{
-                        backgroundImage: "url(/images/paymentimg2.jpg)",
+                        backgroundImage: "url(/images/orderimg.jpg)",
                         backgroundPosition: "center",
                         backgroundSize: "cover",
                         paddingTop: "3%",
@@ -63,7 +63,7 @@ export default function Order(props) {
                         height: "100%",
                         paddingLeft:"2em"
                     }}>
-                    <div style={{paddingTop:"2em",paddingLeft:"10%"}}>
+                    <div style={{paddingTop:"2em",paddingLeft:"31%"}}>
                         <h1>Ordered Successfully!</h1>
                         <h2> Your Order Details</h2>
                         <h2>Order Number: {order._id}</h2>

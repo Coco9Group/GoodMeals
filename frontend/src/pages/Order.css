@@ -1,8 +1,7 @@
 .porow {
   width: 800px;
-  padding-left: 8%;
+  margin: auto;
 }
-
 .orderlist {
   display: flex;
   flex-wrap: wrap;
