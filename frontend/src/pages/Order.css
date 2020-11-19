@@ -23,9 +23,6 @@
 .pocol-2 {
   flex: 2 1 50rem;
 }
-.pomin-30 {
-  min-width: 30rem;
-}
 
 .unli {
   list-style-type: none;

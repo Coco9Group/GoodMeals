@@ -52,37 +52,51 @@ export default function Order(props) {
     ) : error ? (
         <MessageBox variant="danger">{error}</MessageBox>
     ) : (
-                <div>
-                    <h1>Ordered Successfully! Your Order Details</h1>
-                    <h2>Order Number: {order._id}</h2>
+                    <div
+                    style={{
+                        backgroundImage: "url(/images/paymentimg2.jpg)",
+                        backgroundPosition: "center",
+                        backgroundSize: "cover",
+                        paddingTop: "3%",
+                        marginTop: "-2%",
+                        paddingBottom: "3%",
+                        height: "100%",
+                        paddingLeft:"2em"
+                    }}>
+                    <div style={{paddingTop:"2em",paddingLeft:"10%"}}>
+                        <h1>Ordered Successfully!</h1>
+                        <h2> Your Order Details</h2>
+                        <h2>Order Number: {order._id}</h2>
+                    </div>
                     <div className="porow top">
                         <div className="pocol-2">
                             <ul>
-                                <li>
+                                <li className="unli">
                                     <div className="pocard pocard-body">
                                         <h2>Delivery Information</h2>
                                         {order.deliveryMethod === 'Ship' ? (
-                                            <div><p>
+                                            <div className="pdleft"><p>
                                                 <strong>Name:</strong> {order.shippingAddress.fullName} <br />
                                                 <strong>Address: </strong> {order.shippingAddress.address}, {order.shippingAddress.city}, {order.shippingAddress.postalCode}<br />
                                                 <strong>Phone:</strong> {order.shippingAddress.phone}
                                             </p></div>
                                         ) : (
-                                                <div>
-                                                    Pickup
-                                                    - pickup location
-                                                    GoodMeals
-                                                    345 Oxford Street, London N56B3C
-                                                    phone: 519)555-6686
+                                            <div className="pdleft">
+                                                <h2>Pickup - pickup location</h2>
+                                                <div style={{paddingLeft:"1em"}}>
+                                                <p>GoodMeals</p>
+                                                <p>345 Oxford Street, London N56B3C</p>
+                                                <p>phone: 519)555-6686</p>
                                                 </div>
+                                            </div>
                                             )
                                         }
                                     </div>
                                 </li>
-                                <li>
+                                <li className="unli">
                                     <div className="pocard pocard-body">
                                         <h2>Payment</h2>
-                                        <p>
+                                        <p className="pdleft">
                                             <strong>{order.paymentMethod}</strong>
 
                                             {order.paymentMethod === 'CreditCard' ? (
@@ -96,21 +110,22 @@ export default function Order(props) {
                                         </p>
                                     </div>
                                 </li>
-                                <li>
+                                <li className="unli">
                                     <div className="pocard pocard-body">
                                         <h2>Order Items</h2>
                                         <ul>
                                             {order.orderItems.map((item) => (
-                                                <li key={item.meal}>
-                                                    <div className="porow">
+                                                <li className="unli pdleft" key={item.meal}>
+                                                    <div className="orderlist">    
+                                                        <img
+                                                            style={{width:"25%", height:"25%"}}
+                                                            src={item.image}
+                                                            alt={item.name}
+                                                        ></img>
                                                         <div>
-                                                            <img
-                                                                src={item.image}
-                                                                alt={item.name}
-                                                            ></img>
-                                                        </div>
-                                                        <div className="pomin-30">
-                                                            <Link to={`/meal/${item.meal}`}>
+                                                            <Link 
+                                                            style={{textDecoration:"none" }}
+                                                            to={`/meal/${item.meal}`}>
                                                                 {item.name}
                                                             </Link>
                                                         </div>
@@ -124,10 +139,10 @@ export default function Order(props) {
                                     </div>
                                 </li>
 
-                                <li>
+                                <li className="unli">
                                     <div className="pocard pocard-body">
                                         <h2>Order Summary</h2>
-                                        <p>
+                                        <p className="pdleft">
                                             <strong>Items:</strong> ${order.itemsPrice.toFixed(2)} <br />
                                             <strong>Tax: </strong> ${order.taxPrice.toFixed(2)}<br />
                                             <strong>Total:</strong> <strong>${order.totalPrice.toFixed(2)}</strong>
@@ -135,7 +150,7 @@ export default function Order(props) {
                                     </div>
                                 </li>
                                 {order.paymentMethod === "PayPal" && (
-                                    <li>
+                                    <li className="unli">
                                         {!sdkReady ? (
                                             <LoadingBox></LoadingBox>
                                         ) : (
