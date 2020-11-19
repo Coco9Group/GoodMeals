@@ -1,9 +1,16 @@
 .porow {
+  width: 800px;
+  padding-left: 8%;
+}
+
+.orderlist {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
+  padding-bottom: 1em;
 }
+
 .porow.center {
   justify-content: center;
 }
@@ -20,10 +27,19 @@
   min-width: 30rem;
 }
 
+.unli {
+  list-style-type: none;
+}
+.pdleft {
+  padding-left: 2em;
+}
+.orderprice {
+  float: right;
+}
 /* Card */
 .pocard {
   border: 0.1rem #c0c0c0 solid;
-  background-color: #f8f8f8;
+  background-color: rgb(237, 240, 243);
   border-radius: 0.5rem;
   margin: 1rem;
 }
@@ -53,4 +69,12 @@
 .alert-success {
   color: #5120a0;
   background-color: #eeffe0;
+}
+.orderbutton {
+  margin-top: 2em;
+  text-align: center;
+  width: 45%;
+  margin-left: 27%;
+  margin-top: 12%;
+  align-items: center;
 }

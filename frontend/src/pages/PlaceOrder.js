@@ -51,33 +51,31 @@ export default function PlaceOrder(props) {
             <CheckoutSteps step1 step2 step3 step4></CheckoutSteps>
             <div className="porow top">
                 <div className="pocol-2">
-                    <ul >
-                        <li>
+                    <ul>
+                        <li className="unli">
                             <div className="pocard pocard-body">
                                 <h2>Delivery Information</h2>
 
                                 {cart.deliveryMethod === 'Ship' ? (
-                                    <div><p>
+                                    <div className="pdleft"><p>
                                         <strong>Name:</strong> {cart.shippingAddress.fullName} <br />
                                         <strong>Address: </strong> {cart.shippingAddress.address}, {cart.shippingAddress.city}, {cart.shippingAddress.postalCode}<br />
                                         <strong>Phone:</strong> {cart.shippingAddress.phone}
                                     </p></div>
                                 ) : (
-                                        <div>
-                                            Pickup
-                                            - pickup location
-                                            GoodMeals
-                                            345 Oxford Street, London N56B3C
-                                            phone: 519)555-6686
-                                        </div>
+                                    <div className="pdleft">
+                                    <p>GoodMeals</p>
+                                    <p>345 Oxford Street, London N56B3C</p>
+                                    <p>phone: 519)555-6686</p>
+                                </div>
                                     )
                                 }
                             </div>
                         </li>
-                        <li>
+                        <li className="unli">
                             <div className="pocard pocard-body">
                                 <h2>Payment</h2>
-                                <p>
+                                <p className="pdleft">
                                     <strong>{cart.paymentMethod}</strong>
 
                                     {cart.paymentMethod === 'CreditCard' ? (
@@ -91,21 +89,22 @@ export default function PlaceOrder(props) {
                                 </p>
                             </div>
                         </li>
-                        <li>
+                        <li className="unli">
                             <div className="pocard pocard-body">
                                 <h2>Order Items</h2>
                                 <ul>
                                     {cart.cartItems.map((item) => (
-                                        <li key={item.meal}>
-                                            <div className="porow">
-                                                <div>
+                                        <li className="unli pdleft" key={item.meal}>
+                                            <div className="orderlist">
                                                     <img
+                                                        style={{width:"25%", height:"25%"}}
                                                         src={item.image}
                                                         alt={item.name}
                                                     ></img>
-                                                </div>
-                                                <div className="pomin-30">
-                                                    <Link to={`/meal/${item.meal}`}>
+                                                <div>
+                                                    <Link 
+                                                    style={{textDecoration:"none" }}
+                                                    to={`/meal/${item.meal}`}>
                                                         {item.name}
                                                     </Link>
                                                 </div>
@@ -119,15 +118,16 @@ export default function PlaceOrder(props) {
                             </div>
                         </li>
 
-                        <li>
+                        <li className="unli">
                             <div className="pocard pocard-body">
                                 <h2>Order Summary</h2>
-                                <p>
+                                <p className="pdleft orderprice">
                                     <strong>Items:</strong> ${cart.itemsPrice.toFixed(2)} <br />
                                     <strong>Tax: </strong> ${cart.taxPrice.toFixed(2)}<br />
                                     <strong>Total:</strong> <strong>${cart.totalPrice.toFixed(2)}</strong>
                                 </p>
                                 <button
+                                    className="orderbutton"
                                     type="button"
                                     onClick={placeOrderHandler}
                                     disabled={cart.cartItems.length === 0}

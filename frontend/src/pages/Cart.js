@@ -69,19 +69,19 @@ export default function Cart(props) {
                                     <li key={item.meal} className="cartli">
                                         <div className="rowdisplay">
                                             <img
+                                                style={{width:"20%", height:"20%"}}
                                                 src={item.image}
                                                 alt={item.name}
                                                 className="imgcart"
                                             ></img>
                                             <div
-                                                style={{ width: "43%", paddingRight: "2%"}}
+                                                style={{ width: "40%"}}
                                             >
                                                 <Link 
                                                 style={{textDecoration:"none"}}
                                                 to={`/meals/${item.meal}`}>{item.name}</Link>
                                             </div>
                                             <div
-                                                style={{ paddingRight: "3%" }}
                                             >
                                                 <select
                                                     value={item.qty}
@@ -103,7 +103,7 @@ export default function Cart(props) {
                                                     <option key="10" value="10">10</option>
                                                 </select>
                                             </div>
-                                            <div style={{ paddingRight: "2%" }}>${item.price}</div>
+                                            <div>${item.price}</div>
                                             <div style={{ width: "10%" }}>
                                                 <Link
                                                     style={{textDecoration:"none"}}
