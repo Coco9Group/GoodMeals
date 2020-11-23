@@ -12,7 +12,7 @@ export default function PageReview() {
     <div>
       <div
         style={{
-          backgroundImage: "url(/images/foodimg.PNG)",
+          backgroundImage: "url(/images/marbleimg.jpg)",
           backgroundPosition: "center",
           backgroundSize: "cover",
           paddingTop: "5%",
