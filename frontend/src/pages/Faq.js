@@ -28,7 +28,18 @@ export default function Faq() {
   const classes = useStyles();
 
   return (
-    <div style={{ paddingBottom: "4%" }}>
+    <div
+      style={{
+        backgroundImage: "url(/images/marbleimg.jpg)",
+        backgroundPosition: "center",
+        backgroundSize: "cover",
+        paddingTop: "5%",
+        paddingBottom: "4%",
+        marginTop: "-2%",
+        paddingBottom: "3%",
+        height: "100%",
+      }}
+    >
       <div class="col-xs-12" className={classes.divDivider}>
         <h1>Frequently Asked Questions</h1>
       </div>

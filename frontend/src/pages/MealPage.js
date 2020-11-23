@@ -9,6 +9,7 @@ import CardActionArea from "@material-ui/core/CardActionArea";
 
 import CardMedia from "@material-ui/core/CardMedia";
 import { Typography } from "@material-ui/core";
+import YoutubeVideo from "../components/YoutubeVideo";
 
 export default function MealPage(props) {
   const dispatch = useDispatch();
@@ -142,6 +143,9 @@ export default function MealPage(props) {
               >
                 Add to Cart
               </Button>
+              <div style={{ marginTop: "5.5%" }}>
+                <YoutubeVideo videoId={meal.vidId}></YoutubeVideo>
+              </div>
             </div>
           </div>
         </div>

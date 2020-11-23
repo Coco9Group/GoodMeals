@@ -20,8 +20,8 @@ const Footer = () => {
         <div className="col-sm-3 col-xs-12">
           <h3>Menu</h3>
           <ul className="list-inline mx-auto justify-content-center">
-            <Link to="/" style={{ textDecoration: "none" }}>
-              <li>Menu</li>
+            <Link to="/meals" style={{ textDecoration: "none" }}>
+              <li>Meals</li>
             </Link>
           </ul>
           <ul className="list-inline mx-auto justify-content-center">
@@ -39,12 +39,12 @@ const Footer = () => {
         <div className="col-sm-3 col-xs-12">
           <h3>Support</h3>
           <ul className="list-inline mx-auto justify-content-center">
-            <Link to="/" style={{ textDecoration: "none" }}>
+            <Link to="/faq" style={{ textDecoration: "none" }}>
               <li>FAQ</li>
             </Link>
           </ul>
           <ul className="list-inline mx-auto justify-content-center">
-            <Link to="/" style={{ textDecoration: "none" }}>
+            <Link to="/about-us" style={{ textDecoration: "none" }}>
               <li>About Us</li>
             </Link>
           </ul>
@@ -63,7 +63,7 @@ const Footer = () => {
             </Link>
           </ul>
           <ul className="list-inline mx-auto justify-content-center">
-            <Link to="/" style={{ textDecoration: "none" }}>
+            <Link to="/pageReview" style={{ textDecoration: "none" }}>
               <li>Reviews</li>
             </Link>
           </ul>
