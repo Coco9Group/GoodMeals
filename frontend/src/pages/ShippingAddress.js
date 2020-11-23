@@ -152,7 +152,7 @@ export default function ShippingAddress(props) {
                         </div>
                     )
                 }
-                    <div>
+                <div>
                     <button className="checkbutton" type="submit">
                         Continue To Payment
                     </button>
