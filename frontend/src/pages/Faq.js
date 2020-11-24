@@ -36,7 +36,6 @@ export default function Faq() {
         paddingTop: "5%",
         paddingBottom: "4%",
         marginTop: "-2%",
-        paddingBottom: "3%",
         height: "100%",
       }}
     >

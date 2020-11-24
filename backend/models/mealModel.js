@@ -9,5 +9,6 @@ const mealSchema = new mongoose.Schema({
   image: { type: String },
   vidId: { type: String },
 });
+
 const Meal = mongoose.model("Meal", mealSchema);
 export default Meal;
