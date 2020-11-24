@@ -71,5 +71,5 @@ class AboutUs extends Component {
 }
 
 export default GoogleApiWrapper({
-  apiKey: "AIzaSyCI7EjkwEtDDE-_vCcCAE65Ipq2IVTJjkA",
+  apiKey: "AIzaSyBTMFbIiSvt9w7rB1-dMW7KQdM76HS0gdk",
 })(AboutUs);
