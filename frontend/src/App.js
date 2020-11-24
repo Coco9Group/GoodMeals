@@ -16,11 +16,14 @@ import Vegetarian from "./pages/Vegetarian";
 import Meals from "./pages/Meals";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
-import Order from "./pages/Order";
 import OrderHistory from "./pages/OrderHistory";
 import Cart from "./pages/Cart";
 import Profile from "./pages/Profile";
 import PrivateRoute from './components/PrivateRoute';
+import ShippingAddress from "./pages/ShippingAddress";
+import PaymentMethod from './pages/PaymentMethod';
+import PlaceOrder from './pages/PlaceOrder';
+import Order from './pages/Order';
 
 function App() {
   return (
@@ -42,10 +45,13 @@ function App() {
           <Route path="/meals/:id" component={MealPage} />
           <Route path="/login" exact component={Login} />
           <Route path="/signup" exact component={Signup} />
-          <Route path="/order" exact component={Order} />
           <Route path="/orderhistory" exact component={OrderHistory} />
           <Route path="/cart/:id?" exact component={Cart} />
           <PrivateRoute path="/profile" exact component={Profile}></PrivateRoute>
+          <Route path="/shipping" exact component={ShippingAddress} />
+          <Route path="/payment" exact component={PaymentMethod} />
+          <Route path="/placeorder" exact component={PlaceOrder} />
+          <Route path="/order/:id" exact component={Order} />
         </Switch>
       </div>
       <Footer />

@@ -4,6 +4,7 @@ import dotenv from 'dotenv';
 import mongoose from 'mongoose';
 import userRouter from './routers/userRouter.js';
 import mealRouter from './routers/mealRouter.js';
+import orderRouter from './routers/orderRouter.js';
 
 dotenv.config();
 
@@ -22,22 +23,12 @@ mongoose.connect(config.MONGODB_URL, {
     console.log(error.reason);
 });
 
-// app.get('/api/meals', (req, res) => {
-//     res.send(data.meals);
-// });
-
 app.use('/api/users', userRouter);
 app.use('/api/meals', mealRouter);
-
-// app.get('/api/meals/:id', (req, res) => {
-//     const meal = data.meals.find(x => x._id === req.params.id);
-//     if (meal) {
-//         res.send(meal);
-//     }
-//     else {
-//         res.status(404).send({ message: 'Meal not found' });
-//     }
-// });
+app.use('/api/orders', orderRouter);
+app.get('/api/config/paypal', (req, res) => {
+    res.send(process.env.PAYPAL_CLIENT_ID || 'sandbox');
+});
 
 // app.get('/', (req, res) => {
 //     res.send('server ready');

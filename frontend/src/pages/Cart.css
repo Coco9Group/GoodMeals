@@ -1,6 +1,6 @@
 .rowcart {
   align-items: flex-start;
-  width: 700px;
+  width: 800px;
   margin: auto;
   margin-top: 1%;
   margin-bottom: 5%;
@@ -13,6 +13,7 @@
   flex-wrap: wrap;
   /* justify-content: space-between; */
   align-items: center;
+  justify-content: space-between;
 }
 
 .min-30 {
@@ -22,8 +23,6 @@
 .imgcart {
   margin-left: 7.5%;
   margin-top: 1.5%;
-  width: 13%;
-  height: 10%;
   margin-right: 7%;
 }
 

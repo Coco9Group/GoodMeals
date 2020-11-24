@@ -121,6 +121,14 @@ function Navbar() {
               </li>
               <li>
                 <Link
+                  to="/orderhistory"
+                  style={{ color: "white", textDecoration: "none" }}
+                >
+                  Order History
+                </Link>
+              </li>
+              <li>
+                <Link
                   to="#logout"
                   onClick={logoutHandler}
                   style={{ color: "white", textDecoration: "none" }}
@@ -131,8 +139,8 @@ function Navbar() {
             </ul>
           </div>
         ) : (
-          <Button className="nav-button" />
-        )}
+            <Button className="nav-button" />
+          )}
       </nav>
     </div>
   );
