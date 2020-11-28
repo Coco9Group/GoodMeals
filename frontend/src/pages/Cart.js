@@ -52,9 +52,9 @@ export default function Cart(props) {
                     ) : (
                             <Link
                                 to={`/login?redirect=shipping`}
-                                style={{ paddingRight: "3%", paddingTop: "5%", float: "right", textDecoration:"none" }}
+                                style={{ marginRight: "3%", marginTop: "5%", float: "right", textDecoration: "none", fontWeight: "bold", color: "black", backgroundColor: "cadetblue", padding: "1%" }}
                             >
-                                Proceed to Checkout
+                                PROCEED TO CHECKOUT
                             </Link>
                         )}
 
@@ -69,17 +69,17 @@ export default function Cart(props) {
                                     <li key={item.meal} className="cartli">
                                         <div className="rowdisplay">
                                             <img
-                                                style={{width:"20%", height:"20%"}}
+                                                style={{ width: "20%", height: "20%" }}
                                                 src={item.image}
                                                 alt={item.name}
                                                 className="imgcart"
                                             ></img>
                                             <div
-                                                style={{ width: "40%"}}
+                                                style={{ width: "40%" }}
                                             >
-                                                <Link 
-                                                style={{textDecoration:"none"}}
-                                                to={`/meals/${item.meal}`}>{item.name}</Link>
+                                                <Link
+                                                    style={{ textDecoration: "none" }}
+                                                    to={`/meals/${item.meal}`}>{item.name}</Link>
                                             </div>
                                             <div
                                             >
@@ -106,7 +106,7 @@ export default function Cart(props) {
                                             <div>${item.price}</div>
                                             <div style={{ width: "10%" }}>
                                                 <Link
-                                                    style={{textDecoration:"none"}}
+                                                    style={{ textDecoration: "none" }}
                                                     type="button"
                                                     onClick={() => removeFromCartHandler(item.meal)}
                                                 >
