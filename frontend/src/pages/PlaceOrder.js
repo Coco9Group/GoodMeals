@@ -38,16 +38,16 @@ export default function PlaceOrder(props) {
 
     return (
         <div
-        style={{
-            backgroundImage: "url(/images/paymentimg2.jpg)",
-            backgroundPosition: "center",
-            backgroundSize: "cover",
-            paddingTop: "3%",
-            marginTop: "-2%",
-            paddingBottom: "3%",
-            height: "100%",
-            paddingLeft:"2em"
-        }}>
+            style={{
+                backgroundImage: "url(/images/paymentimg2.jpg)",
+                backgroundPosition: "center",
+                backgroundSize: "cover",
+                paddingTop: "3%",
+                marginTop: "-2%",
+                paddingBottom: "3%",
+                height: "100%",
+                paddingLeft: "2em"
+            }}>
             <CheckoutSteps step1 step2 step3 step4></CheckoutSteps>
             <div className="porow top">
                 <div className="pocol-2">
@@ -59,15 +59,16 @@ export default function PlaceOrder(props) {
                                 {cart.deliveryMethod === 'Ship' ? (
                                     <div className="pdleft"><p>
                                         <strong>Name:</strong> {cart.shippingAddress.fullName} <br />
-                                        <strong>Address: </strong> {cart.shippingAddress.address}, {cart.shippingAddress.city}, {cart.shippingAddress.postalCode}<br />
+                                        <strong>Address: </strong> {cart.shippingAddress.address}, {cart.shippingAddress.city}, {cart.shippingAddress.province}, {cart.shippingAddress.postalCode}<br />
                                         <strong>Phone:</strong> {cart.shippingAddress.phone}
                                     </p></div>
                                 ) : (
-                                    <div className="pdleft">
-                                    <p>GoodMeals</p>
-                                    <p>345 Oxford Street, London N56B3C</p>
-                                    <p>phone: 519)555-6686</p>
-                                </div>
+                                        <div className="pdleft">
+                                            <p>Pickup - pickup location</p>
+                                            <p>GoodMeals</p>
+                                            <p>130 Dundas Street, London ON N6A1G2</p>
+                                            <p>phone: 519)452-4430</p>
+                                        </div>
                                     )
                                 }
                             </div>
@@ -96,15 +97,15 @@ export default function PlaceOrder(props) {
                                     {cart.cartItems.map((item) => (
                                         <li className="unli pdleft" key={item.meal}>
                                             <div className="orderlist">
-                                                    <img
-                                                        style={{width:"25%", height:"25%"}}
-                                                        src={item.image}
-                                                        alt={item.name}
-                                                    ></img>
+                                                <img
+                                                    style={{ width: "25%", height: "25%" }}
+                                                    src={item.image}
+                                                    alt={item.name}
+                                                ></img>
                                                 <div>
-                                                    <Link 
-                                                    style={{textDecoration:"none" }}
-                                                    to={`/meal/${item.meal}`}>
+                                                    <Link
+                                                        style={{ textDecoration: "none" }}
+                                                        to={`/meal/${item.meal}`}>
                                                         {item.name}
                                                     </Link>
                                                 </div>

@@ -16,6 +16,7 @@ export default function ShippingAddress(props) {
     const [fullName, setFullName] = useState(shippingAddress.fullName);
     const [address, setAddress] = useState(shippingAddress.address);
     const [city, setCity] = useState(shippingAddress.city);
+    const [province, setProvince] = useState(shippingAddress.province);
     const [postalCode, setPostalCode] = useState(shippingAddress.postalCode);
     const [phone, setPhone] = useState(shippingAddress.phone);
 
@@ -24,140 +25,161 @@ export default function ShippingAddress(props) {
     const dispatch = useDispatch();
     const submitHandler = (e) => {
         e.preventDefault();
-        dispatch(saveShippingAddress({ fullName, address, city, postalCode, phone }));
+        dispatch(saveShippingAddress({ fullName, address, city, province, postalCode, phone }));
         dispatch(saveDeliveryMethod(deliveryMethod));
         props.history.push('/payment');
     };
 
     return (
         <div
-        style={{
-            backgroundImage: "url(/images/paymentimg2.jpg)",
-            backgroundPosition: "center",
-            backgroundSize: "cover",
-            paddingTop: "3%",
-            marginTop: "-2%",
-            paddingBottom: "3%",
-            height: "100%",
-            paddingLeft:"2em"
-        }}>
+            style={{
+                backgroundImage: "url(/images/paymentimg2.jpg)",
+                backgroundPosition: "center",
+                backgroundSize: "cover",
+                paddingTop: "3%",
+                marginTop: "-2%",
+                paddingBottom: "3%",
+                height: "100%",
+                paddingLeft: "2em"
+            }}>
             <CheckoutSteps step1 step2></CheckoutSteps>
             <div className="forminfo">
-            <div>
-                <h1>Delivery Information</h1>
-            </div>
-            <div className="subt">
-                <h2>Delivery Method </h2>
-            </div>
-
-            <div className="subt decideinfo">
                 <div>
-                    <input
-                        type="radio"
-                        id="ship"
-                        value="Ship"
-                        name="deliveryMethod"
-                        //required
-                        checked={deliveryMethod === "Ship"}
-                        onChange={(e) => setDeliveryMethod(e.target.value)}
-                    ></input>
-                    <label className="subt" htmlFor="ship">Ship</label>
+                    <h1>Delivery Information</h1>
                 </div>
-            </div>
-            <div className="subt decideinfo">
-                <div>
-                    <input
-                        type="radio"
-                        id="pickup"
-                        value="Pickup"
-                        name="deliveryMethod"
-                        //required
-                        checked={deliveryMethod === "Pickup"}
-                        onChange={(e) => setDeliveryMethod(e.target.value)}
-                    ></input>
-                    <label className="subt" htmlFor="pickup">Pick Up</label>
+                <div className="subt">
+                    <h2>Delivery Method </h2>
                 </div>
-            </div>
 
-            <form className="infoform" onSubmit={submitHandler}>
-                {deliveryMethod === 'Ship' ? (
+                <div className="subt decideinfo">
                     <div>
-                        <div>
-                            <h2>Shipping Address </h2>
-                        </div>
-                        <div className="infodiv">
-                            <label className="infolable" htmlFor="fullName">Name</label>
-                            <input
-                                type="text"
-                                id="fullName"
-                                placeholder="Enter full name"
-                                value={fullName}
-                                onChange={(e) => setFullName(e.target.value)}
-                                required
-                            ></input>
-                        </div>
-                        <div className="infodiv">
-                            <label className="infolable" htmlFor="address">Address</label>
-                            <input
-                                type="text"
-                                id="address"
-                                placeholder="Enter address"
-                                value={address}
-                                onChange={(e) => setAddress(e.target.value)}
-                                required
-                            ></input>
-                        </div>
-                        <div className="infodiv">
-                            <label className="infolable" htmlFor="city">City</label>
-                            <input
-                                type="text"
-                                id="city"
-                                placeholder="Enter city"
-                                value={city}
-                                onChange={(e) => setCity(e.target.value)}
-                                required
-                            ></input>
-                        </div>
-                        <div className="infodiv">
-                            <label className="infolable" htmlFor="postalCode">Postal Code</label>
-                            <input
-                                type="text"
-                                id="postalCode"
-                                placeholder="Enter postal code"
-                                value={postalCode}
-                                onChange={(e) => setPostalCode(e.target.value)}
-                                required
-                            ></input>
-                        </div>
-                        <div className="infodiv">
-                            <label className="infolable" htmlFor="phone">Phone</label>
-                            <input
-                                type="text"
-                                id="country"
-                                placeholder="Enter phone"
-                                value={phone}
-                                onChange={(e) => setPhone(e.target.value)}
-                                required
-                            ></input>
-                        </div>
+                        <input
+                            type="radio"
+                            id="ship"
+                            value="Ship"
+                            name="deliveryMethod"
+                            checked={deliveryMethod === "Ship"}
+                            onChange={(e) => setDeliveryMethod(e.target.value)}
+                        ></input>
+                        <label className="subt" htmlFor="ship">Ship</label>
                     </div>
-                ) : (
-                        <div className="message">
-                            <h2>Pickup - pickup location</h2>
-                            <div style={{paddingLeft:"1em"}}>
-                            <p>GoodMeals</p>
-                            <p>345 Oxford Street, London N56B3C</p>
-                            <p>phone: 519)555-6686</p>
+                </div>
+                <div className="subt decideinfo">
+                    <div>
+                        <input
+                            type="radio"
+                            id="pickup"
+                            value="Pickup"
+                            name="deliveryMethod"
+                            checked={deliveryMethod === "Pickup"}
+                            onChange={(e) => setDeliveryMethod(e.target.value)}
+                        ></input>
+                        <label className="subt" htmlFor="pickup">Pick Up</label>
+                    </div>
+                </div>
+
+                <form className="infoform" onSubmit={submitHandler}>
+                    {deliveryMethod === 'Ship' ? (
+                        <div>
+                            <div>
+                                <h2>Shipping Address </h2>
+                            </div>
+                            <div className="infodiv">
+                                <label className="infolable" htmlFor="fullName">Name</label>
+                                <input
+                                    type="text"
+                                    id="fullName"
+                                    placeholder="Enter full name"
+                                    value={fullName}
+                                    onChange={(e) => setFullName(e.target.value)}
+                                    required
+                                ></input>
+                            </div>
+                            <div className="infodiv">
+                                <label className="infolable" htmlFor="address">Address</label>
+                                <input
+                                    type="text"
+                                    id="address"
+                                    placeholder="Enter address"
+                                    value={address}
+                                    onChange={(e) => setAddress(e.target.value)}
+                                    required
+                                ></input>
+                            </div>
+                            <div className="infodiv">
+                                <label className="infolable" htmlFor="city">City</label>
+                                <input
+                                    type="text"
+                                    id="city"
+                                    placeholder="Enter city"
+                                    value={city}
+                                    onChange={(e) => setCity(e.target.value)}
+                                    required
+                                ></input>
+                            </div>
+
+                            <div className="infodiv">
+                                <label className="infolable" htmlFor="province">Province</label>
+                                <select
+                                    value={province}
+                                    onChange={(e) => setProvince(e.target.value)}
+                                >
+                                    <option key="ON" value="ON">ON</option>
+                                    <option key="NL" value="NL">NL</option>
+                                    <option key="PE" value="PE">PE</option>
+                                    <option key="NS" value="NS">NS</option>
+                                    <option key="NB" value="NB">NB</option>
+                                    <option key="QC" value="QC">QC</option>
+                                    <option key="MB" value="MB">MB</option>
+                                    <option key="SK" value="SK">SK</option>
+                                    <option key="AB" value="AB">AB</option>
+                                    <option key="BC" value="BC">BC</option>
+                                    <option key="YT" value="YT">YT</option>
+                                    <option key="NT" value="NT">NT</option>
+                                    <option key="NU" value="NU">NU</option>
+                                </select>
+                            </div>
+
+                            <div className="infodiv">
+                                <label className="infolable" htmlFor="postalCode">Postal Code</label>
+                                <input
+                                    type="text"
+                                    id="postalCode"
+                                    placeholder="Enter postal code"
+                                    value={postalCode}
+                                    onChange={(e) => setPostalCode(e.target.value)}
+                                    required
+                                ></input>
+                            </div>
+                            <div className="infodiv">
+                                <label className="infolable" htmlFor="phone">Phone</label>
+                                <input
+                                    type="text"
+                                    id="country"
+                                    placeholder="Enter phone"
+                                    value={phone}
+                                    onChange={(e) => setPhone(e.target.value)}
+                                    required
+                                ></input>
                             </div>
                         </div>
-                    )
-                }
-                <div>
-                    <button className="checkbutton" type="submit">
-                        Continue To Payment
+                    ) : (
+                            <div className="message">
+                                <h2>Pickup - pickup location</h2>
+                                <div style={{ paddingLeft: "1em" }}>
+                                    <p>GoodMeals</p>
+                                    <p>345 Oxford Street, London N56B3C</p>
+                                    <p>phone: 519)555-6686</p>
+                                </div>
+                            </div>
+                        )
+                    }
+                    <div>
+                        <button className="checkbutton" type="submit">
+                            Continue To Payment
                     </button>
-                </div>
-            </form>
+                    </div>
+                </form>
 
             </div>
         </div>
