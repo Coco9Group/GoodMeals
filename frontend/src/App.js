@@ -24,11 +24,7 @@ import ShippingAddress from "./pages/ShippingAddress";
 import PaymentMethod from './pages/PaymentMethod';
 import PlaceOrder from './pages/PlaceOrder';
 import Order from './pages/Order';
-import ChatIcon from '@material-ui/icons/Chat';
-import Iconpage from './pages/IconPage'
-import { Link } from "react-router-dom";
-import Tooltip from '@material-ui/core/Tooltip';
-import Fab from '@material-ui/core/Fab';
+import ContactUs from './components/ContactUs'
 
 function App() {
   return (
@@ -57,14 +53,10 @@ function App() {
           <Route path="/payment" exact component={PaymentMethod} />
           <Route path="/placeorder" exact component={PlaceOrder} />
           <Route path="/order/:id" exact component={Order} />
-          <Route path="/iconpage" exact component={Iconpage} />
   
         </Switch>
       </div>
-      <Tooltip title="contact" style={{float:"right"}}>
-        <Fab>
-        <Link style={{ fontSize: 40}} to ="./iconpage"><ChatIcon/></Link></Fab>
-      </Tooltip>
+      <ContactUs></ContactUs>
       <Footer />
     </BrowserRouter>
   );
