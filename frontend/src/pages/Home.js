@@ -11,6 +11,7 @@ import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
 import MiniMeals from "../components/MiniMeals";
+import CarouselSlide from "../components/Carousel";
 
 const useStyles = makeStyles((theme) => ({
   cardHeader: {
@@ -106,6 +107,14 @@ export default function Home() {
               GET STARTED!
             </Button>
           </Link>
+        </div>
+
+        <div class="col-xs-12" className={classes.divDivider}>
+          <h1>Promotions</h1>
+        </div>
+
+        <div style={{ paddingBottom: "4%" }}>
+          <CarouselSlide></CarouselSlide>
         </div>
 
         <div class="col-xs-12" className={classes.divDivider}>

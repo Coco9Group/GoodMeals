@@ -19,12 +19,12 @@ import Signup from "./pages/Signup";
 import OrderHistory from "./pages/OrderHistory";
 import Cart from "./pages/Cart";
 import Profile from "./pages/Profile";
-import PrivateRoute from './components/PrivateRoute';
+import PrivateRoute from "./components/PrivateRoute";
 import ShippingAddress from "./pages/ShippingAddress";
-import PaymentMethod from './pages/PaymentMethod';
-import PlaceOrder from './pages/PlaceOrder';
-import Order from './pages/Order';
-import ContactUs from './components/ContactUs'
+import PaymentMethod from "./pages/PaymentMethod";
+import PlaceOrder from "./pages/PlaceOrder";
+import Order from "./pages/Order";
+import ContactUs from "./components/ContactUs";
 
 function App() {
   return (
@@ -48,12 +48,15 @@ function App() {
           <Route path="/signup" exact component={Signup} />
           <Route path="/orderhistory" exact component={OrderHistory} />
           <Route path="/cart/:id?" exact component={Cart} />
-          <PrivateRoute path="/profile" exact component={Profile}></PrivateRoute>
+          <PrivateRoute
+            path="/profile"
+            exact
+            component={Profile}
+          ></PrivateRoute>
           <Route path="/shipping" exact component={ShippingAddress} />
           <Route path="/payment" exact component={PaymentMethod} />
           <Route path="/placeorder" exact component={PlaceOrder} />
           <Route path="/order/:id" exact component={Order} />
-  
         </Switch>
       </div>
       <ContactUs></ContactUs>

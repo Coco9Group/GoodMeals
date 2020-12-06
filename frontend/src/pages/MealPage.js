@@ -41,7 +41,7 @@ export default function MealPage(props) {
                   <CardMedia
                     component="img"
                     alt={meal.image}
-                    height="700"
+                    height="750"
                     image={meal.image}
                     title="Contemplative Reptile"
                   />
@@ -49,7 +49,7 @@ export default function MealPage(props) {
               </Card>
             </div>
             <div className="col-4" style={{ marginLeft: "5%" }}>
-              <h1 style={{ textAlignLast: "center", marginTop: "8%" }}>
+              <h1 style={{ textAlignLast: "center", marginTop: "5%" }}>
                 {meal.name}
               </h1>
               <ul style={{ marginTop: "10%" }}>
