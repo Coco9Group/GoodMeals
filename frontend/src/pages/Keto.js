@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import "../App.css";
 import MealType from "../components/MealType";
 import LoadingBox from "../components/LoadingBox";
@@ -7,12 +7,19 @@ import { useDispatch, useSelector } from "react-redux";
 import { listMeals } from "../actions/mealActions";
 import { Grid } from "@material-ui/core";
 import Divider from "@material-ui/core/Divider";
+import SearchFeature from "../components/SearchFeature";
 
 export default function Keto() {
   const dispatch = useDispatch();
   const mealList = useSelector((state) => state.mealList);
 
   const { loading, error, meals } = mealList;
+
+  const [searchTerm, setSearchTerm] = useState("");
+
+  const handleSearch = (e) => {
+    setSearchTerm(e.target.value);
+  }
 
   useEffect(() => {
     dispatch(listMeals());
@@ -42,6 +49,10 @@ export default function Keto() {
         }}
       />
       <div>
+        <div style={{ display: 'flex', justifyContent: 'flex-end', margin: '1rem 2rem' }}>
+          <SearchFeature onChangeSearch={handleSearch} searchTerm={searchTerm}>
+          </SearchFeature>
+        </div>
         <Grid
           style={{ paddingLeft: "3%", margin: "0px" }}
           lg={12}
@@ -54,21 +65,22 @@ export default function Keto() {
           ) : error ? (
             <MessageBox variant="danger">{error}</MessageBox>
           ) : (
-            <div className="row">
-              {meals
-                .filter((type) => type.dietplanName === "keto")
-                .map((filteredMeals) => (
-                  <Grid
-                    style={{ padding: "2%" }}
-                    key={filteredMeals._id}
-                    item
-                    lg={3}
-                  >
-                    <MealType meal={filteredMeals}></MealType>
-                  </Grid>
-                ))}
-            </div>
-          )}
+                <div className="row">
+                  {meals
+                    .filter((type) => type.dietplanName === "keto")
+                    .filter((type) => type.name.toLowerCase().includes(searchTerm.toLowerCase()) || type.ingredients.toLowerCase().includes(searchTerm.toLowerCase()))
+                    .map((filteredMeals) => (
+                      <Grid
+                        style={{ padding: "2%" }}
+                        key={filteredMeals._id}
+                        item
+                        lg={3}
+                      >
+                        <MealType meal={filteredMeals}></MealType>
+                      </Grid>
+                    ))}
+                </div>
+              )}
         </Grid>
       </div>
     </div>
