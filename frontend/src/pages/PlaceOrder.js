@@ -75,13 +75,13 @@ export default function PlaceOrder(props) {
                     </p>
                   </div>
                 ) : (
-                  <div className="pdleft">
-                    <p>Pickup - pickup location</p>
-                    <p>GoodMeals</p>
-                    <p>130 Dundas Street, London ON N6A1G2</p>
-                    <p>phone: 519)452-4430</p>
-                  </div>
-                )}
+                    <div className="pdleft">
+                      <p>Pickup - pickup location</p>
+                      <p>GoodMeals</p>
+                      <p>130 Dundas Street, London ON N6A1G2</p>
+                      <p>phone: 519)452-4430</p>
+                    </div>
+                  )}
               </div>
             </li>
             <li className="unli">
@@ -95,18 +95,18 @@ export default function PlaceOrder(props) {
                       <strong>Card Holder:</strong>{" "}
                       {cart.creditCardInfo.holderName} <br />
                       <strong>Card Number: </strong>{" "}
-                      {cart.creditCardInfo.cardNumber.substring(0, 7)} *******
+                      {cart.creditCardInfo.cardNumber.substring(0, 4)} *** *******
                       <br />
                       <strong>Expiry Date: </strong>{" "}
                       {cart.creditCardInfo.expiryDate}
                       <br />
                     </div>
                   ) : (
-                    <div>
-                      After clicking “Place order”, you will see PayPal button
-                      to complete your purchase securely.
-                    </div>
-                  )}
+                      <div>
+                        After clicking “Place order”, you will see PayPal button
+                        to complete your purchase securely.
+                      </div>
+                    )}
                 </p>
               </div>
             </li>
@@ -125,7 +125,7 @@ export default function PlaceOrder(props) {
                         <div>
                           <Link
                             style={{ textDecoration: "none" }}
-                            to={`/meal/${item.meal}`}
+                            to={`/meals/${item.meal}`}
                           >
                             {item.name}
                           </Link>

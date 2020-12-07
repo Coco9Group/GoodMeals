@@ -110,7 +110,7 @@ export default function Order(props) {
                           <strong>Card Holder:</strong>{" "}
                           {order.creditCardInfo.holderName} <br />
                           <strong>Card Number: </strong>{" "}
-                          {order.creditCardInfo.cardNumber.substring(0, 7)} *******
+                          {order.creditCardInfo.cardNumber.substring(0, 4)} *** *******
                           <br />
                           <strong>Expiry Date: </strong>{" "}
                           {order.creditCardInfo.expiryDate}
@@ -137,7 +137,7 @@ export default function Order(props) {
                             <div>
                               <Link
                                 style={{ textDecoration: "none" }}
-                                to={`/meal/${item.meal}`}
+                                to={`/meals/${item.meal}`}
                               >
                                 {item.name}
                               </Link>
