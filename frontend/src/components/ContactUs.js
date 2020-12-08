@@ -66,7 +66,7 @@ export default function ContactUs() {
             </Button>
             <Dialog
               open={open}
-              onClose={handleClose}
+              onClose={handleClose, handleIconClose}
               aria-labelledby="title"
               aria-describedby="description"
             >
