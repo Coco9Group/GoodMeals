@@ -292,15 +292,15 @@ export default function ShippingAddress(props) {
               </div>
             </div>
           ) : (
-            <div className="message">
-              <h2>Pickup - pickup location</h2>
-              <div style={{ paddingLeft: "1em" }}>
-                <p>GoodMeals</p>
-                <p>345 Oxford Street, London N56B3C</p>
-                <p>phone: 519)555-6686</p>
+              <div className="message">
+                <h2>Pickup - pickup location</h2>
+                <div style={{ paddingLeft: "1em" }}>
+                  <p>GoodMeals</p>
+                  <p>130 Dundas Street, London N6A 1G2</p>
+                  <p>phone: 519) 452-4430</p>
+                </div>
               </div>
-            </div>
-          )}
+            )}
           <div>
             <Button
               className="checkbutton"
