@@ -1,5 +1,6 @@
 import config from './config.js';
 import express from 'express';
+import path from 'path';
 import dotenv from 'dotenv';
 import mongoose from 'mongoose';
 import userRouter from './routers/userRouter.js';
