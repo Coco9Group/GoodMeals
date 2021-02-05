@@ -29,7 +29,7 @@ export default function Vegan() {
     <div>
       <div>
         <img
-          src={"images/vegan/VeganBanner.jpg"}
+          src={"images/Vegan/VeganBanner.jpg"}
           alt="VeganBanner"
           style={{
             marginLeft: "27.5%",
